@@ -825,7 +825,10 @@
           "package": "github.com/ctxcode/jolt"
         }
       ],
-      "configs": []
+      "configs": [],
+      "depends": [
+        "vman"
+      ]
     },
     {
       "id": "keepassxc",
@@ -1020,6 +1023,9 @@
             "windows": "%LOCALAPPDATA%\\lazygit"
           }
         }
+      ],
+      "depends": [
+        "git"
       ]
     },
     {

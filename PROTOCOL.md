@@ -28,6 +28,7 @@ This document defines the open JSON protocol used by `software.json` so any soft
 | `repository` | `string` | No | Source code repository URL. |
 | `license` | `string` | No | SPDX license identifier (e.g. `"MIT"`, `"Apache-2.0"`, `"MPL-2.0"`). |
 | `tags` | `string[]` | No | Search keywords. |
+| `depends` | `string[]` | No | Software IDs that must be installed first. Dependency cycles are invalid and must be rejected. |
 | `detect` | `DetectRule[]` | No | Ordered list of rules to check if the software is already installed. |
 | `methods` | `InstallMethod[]` | No | Ordered list of ways to install, update, or uninstall the software. |
 | `configs` | `ConfigSpec[]` | No | User configuration files or directories suitable for backup/sync. |
@@ -108,6 +109,19 @@ Supported `kind` values:
 - Generic: `script`, `download`, `github_release`
 
 Standard package-manager kinds (`pacman`, `aur`, `apt`, `dnf`, `flatpak`, `brew`, `brew_cask`, `winget`, `scoop`, `vman_global`, etc.) have well-known install, update, and uninstall commands so entries only need `package` unless custom behavior is required.
+
+## Dependencies (`depends`)
+
+A software entry may list other catalog IDs in `depends` that must be installed before it:
+
+```json
+{
+  "id": "jolt",
+  "depends": ["vman"]
+}
+```
+
+Consumers must resolve dependencies topologically (installing missing dependencies first) and reject any unknown dependency ID or dependency cycle (`A -> B -> A` or `A -> A`) as an error.
 
 ## Configuration Paths (`configs`)
 

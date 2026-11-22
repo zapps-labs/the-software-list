@@ -77,6 +77,39 @@ def main() -> int:
                 errors.append(f"{ctx}.configs[{ci}]: missing or duplicate config id")
             seen_cfgs.add(cid)
 
+    # Validate depends references and check for dependency cycles
+    by_id = {entry.get("id"): entry for entry in items if isinstance(entry.get("id"), str)}
+    for entry in items:
+        eid = entry.get("id", "")
+        deps = entry.get("depends", [])
+        if not isinstance(deps, list):
+            errors.append(f"{eid}: depends must be an array")
+            continue
+        for dep in deps:
+            if not isinstance(dep, str) or dep not in by_id:
+                errors.append(f"{eid}: unknown dependency '{dep}'")
+
+    state = {}  # 0/absent=unvisited, 1=visiting, 2=done
+
+    def dfs(node_id: str, path_stack: list[str]) -> None:
+        state[node_id] = 1
+        path_stack.append(node_id)
+        for dep in by_id.get(node_id, {}).get("depends", []):
+            if dep not in by_id:
+                continue
+            st = state.get(dep, 0)
+            if st == 1:
+                cycle = " -> ".join(path_stack[path_stack.index(dep):] + [dep])
+                errors.append(f"dependency cycle detected: {cycle}")
+            elif st == 0:
+                dfs(dep, path_stack)
+        path_stack.pop()
+        state[node_id] = 2
+
+    for eid in by_id:
+        if state.get(eid, 0) == 0:
+            dfs(eid, [])
+
     if errors:
         for e in errors:
             print(f"ERROR: {e}", file=sys.stderr)

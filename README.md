@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/logo.svg" alt="the-software-list logo" width="128" height="128" />
+</p>
+
 # the-software-list
 
 An open, tool-agnostic JSON catalog of software describing how applications can be **installed**, **detected**, **updated**, **uninstalled**, and how their **configuration files** are located across Linux, macOS, and Windows.

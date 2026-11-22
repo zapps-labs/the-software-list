@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="tsl-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="55%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="tsl-accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+  </defs>
+  <rect x="12" y="12" width="232" height="232" rx="54" fill="url(#tsl-bg)"/>
+  <!-- Three crisp software list rows: package/check nodes + bars -->
+  <circle cx="72" cy="84" r="16" fill="url(#tsl-accent)"/>
+  <path d="M64.5 84.5L70 90L80 78.5" fill="none" stroke="#ffffff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="104" y="74" width="96" height="20" rx="10" fill="#ffffff"/>
+
+  <circle cx="72" cy="132" r="16" fill="url(#tsl-accent)"/>
+  <path d="M64.5 132.5L70 138L80 126.5" fill="none" stroke="#ffffff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="104" y="122" width="76" height="20" rx="10" fill="#ffffff" fill-opacity="0.92"/>
+
+  <circle cx="72" cy="180" r="16" fill="#ffffff" fill-opacity="0.25"/>
+  <circle cx="72" cy="180" r="7" fill="#ffffff"/>
+  <rect x="104" y="170" width="88" height="20" rx="10" fill="#ffffff" fill-opacity="0.72"/>
+</svg>
