@@ -285,9 +285,9 @@
         {"os": "windows", "kind": "binary", "value": "jolt.exe", "version_args": ["--version"]}
       ],
       "methods": [
-        {"os": "linux", "kind": "sh", "install_cmd": "vman global install github.com/ctxcode/jolt", "uninstall_cmd": "vman global remove github.com/ctxcode/jolt"},
-        {"os": "macos", "kind": "sh", "install_cmd": "vman global install github.com/ctxcode/jolt", "uninstall_cmd": "vman global remove github.com/ctxcode/jolt"},
-        {"os": "windows", "kind": "powershell", "install_cmd": "vman global install github.com/ctxcode/jolt", "uninstall_cmd": "vman global remove github.com/ctxcode/jolt"}
+        {"os": "linux", "kind": "sh", "install_cmd": "vman global install github.com/ctxcode/jolt", "uninstall_cmd": "vman global remove jolt"},
+        {"os": "macos", "kind": "sh", "install_cmd": "vman global install github.com/ctxcode/jolt", "uninstall_cmd": "vman global remove jolt"},
+        {"os": "windows", "kind": "powershell", "install_cmd": "vman global install github.com/ctxcode/jolt", "uninstall_cmd": "vman global remove jolt"}
       ],
       "configs": [],
       "depends": ["vman"]
