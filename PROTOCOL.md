@@ -116,11 +116,10 @@ Supported `kind` values:
 - Linux system & universal: `pacman`, `aur`, `apt`, `dnf`, `zypper`, `apk`, `flatpak`, `snap`, `nix`, `appimage`
 - macOS: `brew`, `brew_cask`
 - Windows: `winget`, `scoop`, `choco`
-- Language / tool ecosystems: `vman`, `cargo`, `npm`, `pipx`
 - Shell runners: `sh` (`/bin/sh -c`), `bash` (`bash -c`), `powershell` (`pwsh` / `powershell -NoProfile -Command`), `cmd` (`cmd /C`)
 - Generic: `download`, `github_release`
 
-Standard package-manager kinds (`pacman`, `aur`, `apt`, `dnf`, `flatpak`, `brew`, `brew_cask`, `winget`, `scoop`, `vman`, etc.) have well-known install, update, and uninstall commands so entries only need `package` unless custom behavior is required.
+Standard package-manager kinds (`pacman`, `aur`, `apt`, `dnf`, `flatpak`, `brew`, `brew_cask`, `winget`, `scoop`, etc.) have well-known install, update, and uninstall commands so entries only need `package` unless custom behavior is required. For language/ecosystem tools like `vman`, `cargo`, `npm`, or `pipx`, use a shell runner (`sh`, `powershell`, etc.) together with `depends`.
 
 ## Dependencies (`depends`)
 
