@@ -46,18 +46,15 @@
                 "kind": {
                   "enum": [
                     "pacman", "aur", "apt", "dnf", "zypper", "apk",
-                    "flatpak", "snap", "nix", "appimage",
+                    "flatpak", "snap", "nix",
                     "brew", "brew_cask",
                     "winget", "scoop", "choco",
-                    "sh", "bash", "powershell", "cmd",
-                    "download", "github_release"
+                    "sh", "bash", "powershell", "cmd"
                   ]
                 },
                 "package": { "type": "string" },
                 "remote": { "type": "string" },
                 "arch": { "type": "array", "items": { "type": "string" } },
-                "url": { "type": "string" },
-                "sha256": { "type": "string" },
                 "install_cmd": { "type": "string" },
                 "update_cmd": { "type": "string" },
                 "uninstall_cmd": { "type": "string" },

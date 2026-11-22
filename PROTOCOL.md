@@ -105,19 +105,16 @@ Windows PowerShell example:
 | `package` | `string` | Conditional | Package identifier for package-manager kinds (e.g. `"neovim"`, `"Mozilla.Firefox"`, `"github.com/ctxcode/jolt"`). |
 | `remote` | `string` | No | Optional remote/tap/repo name (e.g. `"flathub"`, Homebrew tap, COPR, PPA). |
 | `arch` | `string[]` | No | Optional architecture filter (e.g. `["x86_64", "arm64"]`). Omit if all architectures are supported. |
-| `url` | `string` | Conditional | Direct download URL for `download` / `appimage` methods. |
-| `sha256` | `string` | No | Optional SHA-256 checksum for direct downloads. |
 | `install_cmd` | `string` | Conditional | Command for shell kinds (`sh`, `bash`, `powershell`, `cmd`), or custom install override. |
 | `update_cmd` | `string` | No | Command to update the software (for shell kinds or custom updaters). |
 | `uninstall_cmd` | `string` | No | Command to uninstall the software. |
 | `priority` | `integer` | No | Optional preference weight (default `0`; higher preferred). |
 
 Supported `kind` values:
-- Linux system & universal: `pacman`, `aur`, `apt`, `dnf`, `zypper`, `apk`, `flatpak`, `snap`, `nix`, `appimage`
+- Linux system & universal: `pacman`, `aur`, `apt`, `dnf`, `zypper`, `apk`, `flatpak`, `snap`, `nix`
 - macOS: `brew`, `brew_cask`
 - Windows: `winget`, `scoop`, `choco`
 - Shell runners: `sh` (`/bin/sh -c`), `bash` (`bash -c`), `powershell` (`pwsh` / `powershell -NoProfile -Command`), `cmd` (`cmd /C`)
-- Generic: `download`, `github_release`
 
 Standard package-manager kinds (`pacman`, `aur`, `apt`, `dnf`, `flatpak`, `brew`, `brew_cask`, `winget`, `scoop`, etc.) have well-known install, update, and uninstall commands so entries only need `package` unless custom behavior is required. For language/ecosystem tools like `vman`, `cargo`, `npm`, or `pipx`, use a shell runner (`sh`, `powershell`, etc.) together with `depends`.
 

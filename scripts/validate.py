@@ -11,10 +11,9 @@ VALID_DETECT = {"binary", "path", "flatpak", "snap", "macos_app", "command"}
 SHELL_METHODS = {"sh", "bash", "powershell", "cmd"}
 VALID_METHODS = {
     "pacman", "aur", "apt", "dnf", "zypper", "apk",
-    "flatpak", "snap", "nix", "appimage",
+    "flatpak", "snap", "nix",
     "brew", "brew_cask",
     "winget", "scoop", "choco",
-    "download", "github_release",
 } | SHELL_METHODS
 ID_RE = re.compile(r"^[a-z0-9][a-z0-9-]*$")
 
@@ -63,9 +62,6 @@ def main() -> int:
             if kind in SHELL_METHODS:
                 if not method.get("install_cmd"):
                     errors.append(f"{ctx}.methods[{mi}]: {kind} method needs install_cmd")
-            elif kind in ("download", "appimage"):
-                if not method.get("url"):
-                    errors.append(f"{ctx}.methods[{mi}]: {kind} method needs url")
             else:
                 if not method.get("package"):
                     errors.append(f"{ctx}.methods[{mi}]: {kind} method needs package")
