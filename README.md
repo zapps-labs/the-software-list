@@ -26,8 +26,9 @@ https://raw.githubusercontent.com/zapps-labs/the-software-list/main/software.jso
 ## Contributing
 
 1. Add or update an entry in `software.json` following [`PROTOCOL.md`](PROTOCOL.md).
-2. Run the validator:
+2. Format and validate:
    ```sh
+   python3 scripts/format.py
    python3 scripts/validate.py
    ```
 3. Open a Pull Request.

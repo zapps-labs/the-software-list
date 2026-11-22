@@ -8,65 +8,21 @@
       "summary": "Minimal, cross-platform OpenGL terminal emulator",
       "category": "Terminals",
       "homepage": "https://alacritty.org",
-      "tags": [
-        "terminal",
-        "rust",
-        "opengl"
-      ],
+      "tags": ["terminal", "rust", "opengl"],
       "detect": [
-        {
-          "os": "linux",
-          "kind": "binary",
-          "value": "alacritty"
-        },
-        {
-          "os": "macos",
-          "kind": "binary",
-          "value": "alacritty"
-        },
-        {
-          "os": "windows",
-          "kind": "binary",
-          "value": "alacritty.exe"
-        }
+        {"os": "linux", "kind": "binary", "value": "alacritty"},
+        {"os": "macos", "kind": "binary", "value": "alacritty"},
+        {"os": "windows", "kind": "binary", "value": "alacritty.exe"}
       ],
       "methods": [
-        {
-          "os": "linux",
-          "kind": "pacman",
-          "package": "alacritty"
-        },
-        {
-          "os": "linux",
-          "kind": "apt",
-          "package": "alacritty"
-        },
-        {
-          "os": "linux",
-          "kind": "dnf",
-          "package": "alacritty"
-        },
-        {
-          "os": "macos",
-          "kind": "brew",
-          "package": "alacritty"
-        },
-        {
-          "os": "windows",
-          "kind": "winget",
-          "package": "Alacritty.Alacritty"
-        }
+        {"os": "linux", "kind": "pacman", "package": "alacritty"},
+        {"os": "linux", "kind": "apt", "package": "alacritty"},
+        {"os": "linux", "kind": "dnf", "package": "alacritty"},
+        {"os": "macos", "kind": "brew", "package": "alacritty"},
+        {"os": "windows", "kind": "winget", "package": "Alacritty.Alacritty"}
       ],
       "configs": [
-        {
-          "id": "config",
-          "label": "Alacritty config",
-          "paths": {
-            "linux": "~/.config/alacritty",
-            "macos": "~/.config/alacritty",
-            "windows": "%APPDATA%\\alacritty"
-          }
-        }
+        {"id": "config", "label": "Alacritty config", "paths": {"linux": "~/.config/alacritty", "macos": "~/.config/alacritty", "windows": "%APPDATA%\\alacritty"}}
       ]
     },
     {
@@ -75,65 +31,21 @@
       "summary": "A cat clone with syntax highlighting and Git integration",
       "category": "CLI Tools",
       "homepage": "https://github.com/sharkdp/bat",
-      "tags": [
-        "cat",
-        "syntax",
-        "cli",
-        "rust"
-      ],
+      "tags": ["cat", "syntax", "cli", "rust"],
       "detect": [
-        {
-          "os": "linux",
-          "kind": "binary",
-          "value": "bat"
-        },
-        {
-          "os": "macos",
-          "kind": "binary",
-          "value": "bat"
-        },
-        {
-          "os": "windows",
-          "kind": "binary",
-          "value": "bat.exe"
-        }
+        {"os": "linux", "kind": "binary", "value": "bat"},
+        {"os": "macos", "kind": "binary", "value": "bat"},
+        {"os": "windows", "kind": "binary", "value": "bat.exe"}
       ],
       "methods": [
-        {
-          "os": "linux",
-          "kind": "pacman",
-          "package": "bat"
-        },
-        {
-          "os": "linux",
-          "kind": "apt",
-          "package": "bat"
-        },
-        {
-          "os": "linux",
-          "kind": "dnf",
-          "package": "bat"
-        },
-        {
-          "os": "macos",
-          "kind": "brew",
-          "package": "bat"
-        },
-        {
-          "os": "windows",
-          "kind": "winget",
-          "package": "sharkdp.bat"
-        }
+        {"os": "linux", "kind": "pacman", "package": "bat"},
+        {"os": "linux", "kind": "apt", "package": "bat"},
+        {"os": "linux", "kind": "dnf", "package": "bat"},
+        {"os": "macos", "kind": "brew", "package": "bat"},
+        {"os": "windows", "kind": "winget", "package": "sharkdp.bat"}
       ],
       "configs": [
-        {
-          "id": "config",
-          "label": "bat config",
-          "paths": {
-            "linux": "~/.config/bat",
-            "macos": "~/.config/bat"
-          }
-        }
+        {"id": "config", "label": "bat config", "paths": {"linux": "~/.config/bat", "macos": "~/.config/bat"}}
       ]
     },
     {
@@ -142,76 +54,23 @@
       "summary": "Open-source 3D creation suite for modeling, animation, and rendering",
       "category": "Graphics",
       "homepage": "https://www.blender.org",
-      "tags": [
-        "3d",
-        "modeling",
-        "render",
-        "animation"
-      ],
+      "tags": ["3d", "modeling", "render", "animation"],
       "detect": [
-        {
-          "os": "linux",
-          "kind": "binary",
-          "value": "blender"
-        },
-        {
-          "os": "linux",
-          "kind": "flatpak",
-          "value": "org.blender.Blender"
-        },
-        {
-          "os": "macos",
-          "kind": "macos_app",
-          "value": "/Applications/Blender.app"
-        },
-        {
-          "os": "windows",
-          "kind": "binary",
-          "value": "blender.exe"
-        }
+        {"os": "linux", "kind": "binary", "value": "blender"},
+        {"os": "linux", "kind": "flatpak", "value": "org.blender.Blender"},
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/Blender.app"},
+        {"os": "windows", "kind": "binary", "value": "blender.exe"}
       ],
       "methods": [
-        {
-          "os": "linux",
-          "kind": "pacman",
-          "package": "blender"
-        },
-        {
-          "os": "linux",
-          "kind": "apt",
-          "package": "blender"
-        },
-        {
-          "os": "linux",
-          "kind": "dnf",
-          "package": "blender"
-        },
-        {
-          "os": "linux",
-          "kind": "flatpak",
-          "package": "org.blender.Blender",
-          "remote": "flathub"
-        },
-        {
-          "os": "macos",
-          "kind": "brew",
-          "package": "blender"
-        },
-        {
-          "os": "windows",
-          "kind": "winget",
-          "package": "BlenderFoundation.Blender"
-        }
+        {"os": "linux", "kind": "pacman", "package": "blender"},
+        {"os": "linux", "kind": "apt", "package": "blender"},
+        {"os": "linux", "kind": "dnf", "package": "blender"},
+        {"os": "linux", "kind": "flatpak", "package": "org.blender.Blender", "remote": "flathub"},
+        {"os": "macos", "kind": "brew", "package": "blender"},
+        {"os": "windows", "kind": "winget", "package": "BlenderFoundation.Blender"}
       ],
       "configs": [
-        {
-          "id": "config",
-          "label": "Blender preferences & addons",
-          "paths": {
-            "linux": "~/.config/blender",
-            "macos": "~/Library/Application Support/Blender"
-          }
-        }
+        {"id": "config", "label": "Blender preferences & addons", "paths": {"linux": "~/.config/blender", "macos": "~/Library/Application Support/Blender"}}
       ]
     },
     {
@@ -220,67 +79,21 @@
       "summary": "Chromium-based browser with built-in ad and tracker blocking",
       "category": "Browsers",
       "homepage": "https://brave.com",
-      "tags": [
-        "browser",
-        "web",
-        "chromium",
-        "privacy"
-      ],
+      "tags": ["browser", "web", "chromium", "privacy"],
       "detect": [
-        {
-          "os": "linux",
-          "kind": "binary",
-          "value": "brave"
-        },
-        {
-          "os": "linux",
-          "kind": "flatpak",
-          "value": "com.brave.Browser"
-        },
-        {
-          "os": "macos",
-          "kind": "macos_app",
-          "value": "/Applications/Brave Browser.app"
-        },
-        {
-          "os": "windows",
-          "kind": "binary",
-          "value": "brave.exe"
-        }
+        {"os": "linux", "kind": "binary", "value": "brave"},
+        {"os": "linux", "kind": "flatpak", "value": "com.brave.Browser"},
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/Brave Browser.app"},
+        {"os": "windows", "kind": "binary", "value": "brave.exe"}
       ],
       "methods": [
-        {
-          "os": "linux",
-          "kind": "aur",
-          "package": "brave-bin"
-        },
-        {
-          "os": "linux",
-          "kind": "flatpak",
-          "package": "com.brave.Browser",
-          "remote": "flathub"
-        },
-        {
-          "os": "macos",
-          "kind": "brew",
-          "package": "brave-browser"
-        },
-        {
-          "os": "windows",
-          "kind": "winget",
-          "package": "Brave.Brave"
-        }
+        {"os": "linux", "kind": "aur", "package": "brave-bin"},
+        {"os": "linux", "kind": "flatpak", "package": "com.brave.Browser", "remote": "flathub"},
+        {"os": "macos", "kind": "brew", "package": "brave-browser"},
+        {"os": "windows", "kind": "winget", "package": "Brave.Brave"}
       ],
       "configs": [
-        {
-          "id": "config",
-          "label": "Brave user data",
-          "paths": {
-            "linux": "~/.config/BraveSoftware/Brave-Browser",
-            "macos": "~/Library/Application Support/BraveSoftware/Brave-Browser",
-            "windows": "%LOCALAPPDATA%\\BraveSoftware\\Brave-Browser\\User Data"
-          }
-        }
+        {"id": "config", "label": "Brave user data", "paths": {"linux": "~/.config/BraveSoftware/Brave-Browser", "macos": "~/Library/Application Support/BraveSoftware/Brave-Browser", "windows": "%LOCALAPPDATA%\\BraveSoftware\\Brave-Browser\\User Data"}}
       ]
     },
     {
@@ -289,55 +102,19 @@
       "summary": "Resource monitor for CPU, memory, disks, network, and processes",
       "category": "CLI Tools",
       "homepage": "https://github.com/aristocratos/btop",
-      "tags": [
-        "monitor",
-        "system",
-        "tui",
-        "htop"
-      ],
+      "tags": ["monitor", "system", "tui", "htop"],
       "detect": [
-        {
-          "os": "linux",
-          "kind": "binary",
-          "value": "btop"
-        },
-        {
-          "os": "macos",
-          "kind": "binary",
-          "value": "btop"
-        }
+        {"os": "linux", "kind": "binary", "value": "btop"},
+        {"os": "macos", "kind": "binary", "value": "btop"}
       ],
       "methods": [
-        {
-          "os": "linux",
-          "kind": "pacman",
-          "package": "btop"
-        },
-        {
-          "os": "linux",
-          "kind": "apt",
-          "package": "btop"
-        },
-        {
-          "os": "linux",
-          "kind": "dnf",
-          "package": "btop"
-        },
-        {
-          "os": "macos",
-          "kind": "brew",
-          "package": "btop"
-        }
+        {"os": "linux", "kind": "pacman", "package": "btop"},
+        {"os": "linux", "kind": "apt", "package": "btop"},
+        {"os": "linux", "kind": "dnf", "package": "btop"},
+        {"os": "macos", "kind": "brew", "package": "btop"}
       ],
       "configs": [
-        {
-          "id": "config",
-          "label": "btop config",
-          "paths": {
-            "linux": "~/.config/btop",
-            "macos": "~/.config/btop"
-          }
-        }
+        {"id": "config", "label": "btop config", "paths": {"linux": "~/.config/btop", "macos": "~/.config/btop"}}
       ]
     },
     {
@@ -346,55 +123,18 @@
       "summary": "Voice, video, and text chat for communities and teams",
       "category": "Communication",
       "homepage": "https://discord.com",
-      "tags": [
-        "chat",
-        "voice",
-        "messaging"
-      ],
+      "tags": ["chat", "voice", "messaging"],
       "detect": [
-        {
-          "os": "linux",
-          "kind": "binary",
-          "value": "discord"
-        },
-        {
-          "os": "linux",
-          "kind": "flatpak",
-          "value": "com.discordapp.Discord"
-        },
-        {
-          "os": "macos",
-          "kind": "macos_app",
-          "value": "/Applications/Discord.app"
-        },
-        {
-          "os": "windows",
-          "kind": "binary",
-          "value": "Discord.exe"
-        }
+        {"os": "linux", "kind": "binary", "value": "discord"},
+        {"os": "linux", "kind": "flatpak", "value": "com.discordapp.Discord"},
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/Discord.app"},
+        {"os": "windows", "kind": "binary", "value": "Discord.exe"}
       ],
       "methods": [
-        {
-          "os": "linux",
-          "kind": "pacman",
-          "package": "discord"
-        },
-        {
-          "os": "linux",
-          "kind": "flatpak",
-          "package": "com.discordapp.Discord",
-          "remote": "flathub"
-        },
-        {
-          "os": "macos",
-          "kind": "brew",
-          "package": "discord"
-        },
-        {
-          "os": "windows",
-          "kind": "winget",
-          "package": "Discord.Discord"
-        }
+        {"os": "linux", "kind": "pacman", "package": "discord"},
+        {"os": "linux", "kind": "flatpak", "package": "com.discordapp.Discord", "remote": "flathub"},
+        {"os": "macos", "kind": "brew", "package": "discord"},
+        {"os": "windows", "kind": "winget", "package": "Discord.Discord"}
       ],
       "configs": []
     },
@@ -404,49 +144,17 @@
       "summary": "Container runtime and CLI for building and running apps",
       "category": "Development",
       "homepage": "https://www.docker.com",
-      "tags": [
-        "containers",
-        "devops",
-        "cli"
-      ],
+      "tags": ["containers", "devops", "cli"],
       "detect": [
-        {
-          "os": "linux",
-          "kind": "binary",
-          "value": "docker"
-        },
-        {
-          "os": "macos",
-          "kind": "binary",
-          "value": "docker"
-        },
-        {
-          "os": "windows",
-          "kind": "binary",
-          "value": "docker.exe"
-        }
+        {"os": "linux", "kind": "binary", "value": "docker"},
+        {"os": "macos", "kind": "binary", "value": "docker"},
+        {"os": "windows", "kind": "binary", "value": "docker.exe"}
       ],
       "methods": [
-        {
-          "os": "linux",
-          "kind": "pacman",
-          "package": "docker"
-        },
-        {
-          "os": "linux",
-          "kind": "apt",
-          "package": "docker.io"
-        },
-        {
-          "os": "linux",
-          "kind": "dnf",
-          "package": "docker"
-        },
-        {
-          "os": "macos",
-          "kind": "brew",
-          "package": "docker"
-        }
+        {"os": "linux", "kind": "pacman", "package": "docker"},
+        {"os": "linux", "kind": "apt", "package": "docker.io"},
+        {"os": "linux", "kind": "dnf", "package": "docker"},
+        {"os": "macos", "kind": "brew", "package": "docker"}
       ],
       "configs": []
     },
@@ -456,76 +164,23 @@
       "summary": "Fast, privacy-focused open-source web browser",
       "category": "Browsers",
       "homepage": "https://www.mozilla.org/firefox/",
-      "tags": [
-        "browser",
-        "web",
-        "mozilla"
-      ],
+      "tags": ["browser", "web", "mozilla"],
       "detect": [
-        {
-          "os": "linux",
-          "kind": "binary",
-          "value": "firefox"
-        },
-        {
-          "os": "linux",
-          "kind": "flatpak",
-          "value": "org.mozilla.firefox"
-        },
-        {
-          "os": "macos",
-          "kind": "macos_app",
-          "value": "/Applications/Firefox.app"
-        },
-        {
-          "os": "windows",
-          "kind": "binary",
-          "value": "firefox.exe"
-        }
+        {"os": "linux", "kind": "binary", "value": "firefox"},
+        {"os": "linux", "kind": "flatpak", "value": "org.mozilla.firefox"},
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/Firefox.app"},
+        {"os": "windows", "kind": "binary", "value": "firefox.exe"}
       ],
       "methods": [
-        {
-          "os": "linux",
-          "kind": "pacman",
-          "package": "firefox"
-        },
-        {
-          "os": "linux",
-          "kind": "apt",
-          "package": "firefox"
-        },
-        {
-          "os": "linux",
-          "kind": "dnf",
-          "package": "firefox"
-        },
-        {
-          "os": "linux",
-          "kind": "flatpak",
-          "package": "org.mozilla.firefox",
-          "remote": "flathub"
-        },
-        {
-          "os": "macos",
-          "kind": "brew",
-          "package": "firefox"
-        },
-        {
-          "os": "windows",
-          "kind": "winget",
-          "package": "Mozilla.Firefox"
-        }
+        {"os": "linux", "kind": "pacman", "package": "firefox"},
+        {"os": "linux", "kind": "apt", "package": "firefox"},
+        {"os": "linux", "kind": "dnf", "package": "firefox"},
+        {"os": "linux", "kind": "flatpak", "package": "org.mozilla.firefox", "remote": "flathub"},
+        {"os": "macos", "kind": "brew", "package": "firefox"},
+        {"os": "windows", "kind": "winget", "package": "Mozilla.Firefox"}
       ],
       "configs": [
-        {
-          "id": "profile",
-          "label": "Firefox profiles",
-          "paths": {
-            "linux": "~/.mozilla/firefox",
-            "macos": "~/Library/Application Support/Firefox",
-            "windows": "%APPDATA%\\Mozilla\\Firefox"
-          }
-        }
+        {"id": "profile", "label": "Firefox profiles", "paths": {"linux": "~/.mozilla/firefox", "macos": "~/Library/Application Support/Firefox", "windows": "%APPDATA%\\Mozilla\\Firefox"}}
       ]
     },
     {
@@ -534,55 +189,18 @@
       "summary": "Command-line fuzzy finder for files, history, and git",
       "category": "CLI Tools",
       "homepage": "https://github.com/junegunn/fzf",
-      "tags": [
-        "fuzzy",
-        "search",
-        "cli",
-        "shell"
-      ],
+      "tags": ["fuzzy", "search", "cli", "shell"],
       "detect": [
-        {
-          "os": "linux",
-          "kind": "binary",
-          "value": "fzf"
-        },
-        {
-          "os": "macos",
-          "kind": "binary",
-          "value": "fzf"
-        },
-        {
-          "os": "windows",
-          "kind": "binary",
-          "value": "fzf.exe"
-        }
+        {"os": "linux", "kind": "binary", "value": "fzf"},
+        {"os": "macos", "kind": "binary", "value": "fzf"},
+        {"os": "windows", "kind": "binary", "value": "fzf.exe"}
       ],
       "methods": [
-        {
-          "os": "linux",
-          "kind": "pacman",
-          "package": "fzf"
-        },
-        {
-          "os": "linux",
-          "kind": "apt",
-          "package": "fzf"
-        },
-        {
-          "os": "linux",
-          "kind": "dnf",
-          "package": "fzf"
-        },
-        {
-          "os": "macos",
-          "kind": "brew",
-          "package": "fzf"
-        },
-        {
-          "os": "windows",
-          "kind": "winget",
-          "package": "junegunn.fzf"
-        }
+        {"os": "linux", "kind": "pacman", "package": "fzf"},
+        {"os": "linux", "kind": "apt", "package": "fzf"},
+        {"os": "linux", "kind": "dnf", "package": "fzf"},
+        {"os": "macos", "kind": "brew", "package": "fzf"},
+        {"os": "windows", "kind": "winget", "package": "junegunn.fzf"}
       ],
       "configs": []
     },
@@ -592,44 +210,17 @@
       "summary": "Fast, native, feature-rich GPU-accelerated terminal emulator",
       "category": "Terminals",
       "homepage": "https://ghostty.org",
-      "tags": [
-        "terminal",
-        "gpu",
-        "emulator"
-      ],
+      "tags": ["terminal", "gpu", "emulator"],
       "detect": [
-        {
-          "os": "linux",
-          "kind": "binary",
-          "value": "ghostty"
-        },
-        {
-          "os": "macos",
-          "kind": "macos_app",
-          "value": "/Applications/Ghostty.app"
-        }
+        {"os": "linux", "kind": "binary", "value": "ghostty"},
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/Ghostty.app"}
       ],
       "methods": [
-        {
-          "os": "linux",
-          "kind": "pacman",
-          "package": "ghostty"
-        },
-        {
-          "os": "macos",
-          "kind": "brew",
-          "package": "ghostty"
-        }
+        {"os": "linux", "kind": "pacman", "package": "ghostty"},
+        {"os": "macos", "kind": "brew", "package": "ghostty"}
       ],
       "configs": [
-        {
-          "id": "config",
-          "label": "Ghostty config",
-          "paths": {
-            "linux": "~/.config/ghostty",
-            "macos": "~/.config/ghostty"
-          }
-        }
+        {"id": "config", "label": "Ghostty config", "paths": {"linux": "~/.config/ghostty", "macos": "~/.config/ghostty"}}
       ]
     },
     {
@@ -638,76 +229,23 @@
       "summary": "GNU Image Manipulation Program for photo editing and graphics",
       "category": "Graphics",
       "homepage": "https://www.gimp.org",
-      "tags": [
-        "image",
-        "photo",
-        "graphics",
-        "editor"
-      ],
+      "tags": ["image", "photo", "graphics", "editor"],
       "detect": [
-        {
-          "os": "linux",
-          "kind": "binary",
-          "value": "gimp"
-        },
-        {
-          "os": "linux",
-          "kind": "flatpak",
-          "value": "org.gimp.GIMP"
-        },
-        {
-          "os": "macos",
-          "kind": "macos_app",
-          "value": "/Applications/GIMP.app"
-        },
-        {
-          "os": "windows",
-          "kind": "binary",
-          "value": "gimp.exe"
-        }
+        {"os": "linux", "kind": "binary", "value": "gimp"},
+        {"os": "linux", "kind": "flatpak", "value": "org.gimp.GIMP"},
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/GIMP.app"},
+        {"os": "windows", "kind": "binary", "value": "gimp.exe"}
       ],
       "methods": [
-        {
-          "os": "linux",
-          "kind": "pacman",
-          "package": "gimp"
-        },
-        {
-          "os": "linux",
-          "kind": "apt",
-          "package": "gimp"
-        },
-        {
-          "os": "linux",
-          "kind": "dnf",
-          "package": "gimp"
-        },
-        {
-          "os": "linux",
-          "kind": "flatpak",
-          "package": "org.gimp.GIMP",
-          "remote": "flathub"
-        },
-        {
-          "os": "macos",
-          "kind": "brew",
-          "package": "gimp"
-        },
-        {
-          "os": "windows",
-          "kind": "winget",
-          "package": "GIMP.GIMP"
-        }
+        {"os": "linux", "kind": "pacman", "package": "gimp"},
+        {"os": "linux", "kind": "apt", "package": "gimp"},
+        {"os": "linux", "kind": "dnf", "package": "gimp"},
+        {"os": "linux", "kind": "flatpak", "package": "org.gimp.GIMP", "remote": "flathub"},
+        {"os": "macos", "kind": "brew", "package": "gimp"},
+        {"os": "windows", "kind": "winget", "package": "GIMP.GIMP"}
       ],
       "configs": [
-        {
-          "id": "config",
-          "label": "GIMP config",
-          "paths": {
-            "linux": "~/.config/GIMP",
-            "macos": "~/Library/Application Support/GIMP"
-          }
-        }
+        {"id": "config", "label": "GIMP config", "paths": {"linux": "~/.config/GIMP", "macos": "~/Library/Application Support/GIMP"}}
       ]
     },
     {
@@ -716,66 +254,21 @@
       "summary": "Distributed version control system",
       "category": "Development",
       "homepage": "https://git-scm.com",
-      "tags": [
-        "vcs",
-        "scm",
-        "cli",
-        "dev"
-      ],
+      "tags": ["vcs", "scm", "cli", "dev"],
       "detect": [
-        {
-          "os": "linux",
-          "kind": "binary",
-          "value": "git"
-        },
-        {
-          "os": "macos",
-          "kind": "binary",
-          "value": "git"
-        },
-        {
-          "os": "windows",
-          "kind": "binary",
-          "value": "git.exe"
-        }
+        {"os": "linux", "kind": "binary", "value": "git"},
+        {"os": "macos", "kind": "binary", "value": "git"},
+        {"os": "windows", "kind": "binary", "value": "git.exe"}
       ],
       "methods": [
-        {
-          "os": "linux",
-          "kind": "pacman",
-          "package": "git"
-        },
-        {
-          "os": "linux",
-          "kind": "apt",
-          "package": "git"
-        },
-        {
-          "os": "linux",
-          "kind": "dnf",
-          "package": "git"
-        },
-        {
-          "os": "macos",
-          "kind": "brew",
-          "package": "git"
-        },
-        {
-          "os": "windows",
-          "kind": "winget",
-          "package": "Git.Git"
-        }
+        {"os": "linux", "kind": "pacman", "package": "git"},
+        {"os": "linux", "kind": "apt", "package": "git"},
+        {"os": "linux", "kind": "dnf", "package": "git"},
+        {"os": "macos", "kind": "brew", "package": "git"},
+        {"os": "windows", "kind": "winget", "package": "Git.Git"}
       ],
       "configs": [
-        {
-          "id": "gitconfig",
-          "label": "Global .gitconfig",
-          "paths": {
-            "linux": "~/.gitconfig",
-            "macos": "~/.gitconfig",
-            "windows": "%USERPROFILE%\\.gitconfig"
-          }
-        }
+        {"id": "gitconfig", "label": "Global .gitconfig", "paths": {"linux": "~/.gitconfig", "macos": "~/.gitconfig", "windows": "%USERPROFILE%\\.gitconfig"}}
       ]
     },
     {
@@ -785,50 +278,17 @@
       "category": "CLI Tools",
       "homepage": "https://github.com/ctxcode/jolt",
       "repository": "https://github.com/ctxcode/jolt",
-      "tags": [
-        "http",
-        "benchmark",
-        "load-test",
-        "cli",
-        "valk"
-      ],
+      "tags": ["http", "benchmark", "load-test", "cli", "valk"],
       "detect": [
-        {
-          "os": "linux",
-          "kind": "binary",
-          "value": "jolt",
-          "version_args": [
-            "--version"
-          ]
-        },
-        {
-          "os": "macos",
-          "kind": "binary",
-          "value": "jolt",
-          "version_args": [
-            "--version"
-          ]
-        },
-        {
-          "os": "windows",
-          "kind": "binary",
-          "value": "jolt.exe",
-          "version_args": [
-            "--version"
-          ]
-        }
+        {"os": "linux", "kind": "binary", "value": "jolt", "version_args": ["--version"]},
+        {"os": "macos", "kind": "binary", "value": "jolt", "version_args": ["--version"]},
+        {"os": "windows", "kind": "binary", "value": "jolt.exe", "version_args": ["--version"]}
       ],
       "methods": [
-        {
-          "os": "any",
-          "kind": "vman_global",
-          "package": "github.com/ctxcode/jolt"
-        }
+        {"os": "any", "kind": "vman_global", "package": "github.com/ctxcode/jolt"}
       ],
       "configs": [],
-      "depends": [
-        "vman"
-      ]
+      "depends": ["vman"]
     },
     {
       "id": "keepassxc",
@@ -836,75 +296,23 @@
       "summary": "Cross-platform offline password manager",
       "category": "Productivity",
       "homepage": "https://keepassxc.org",
-      "tags": [
-        "passwords",
-        "security",
-        "vault"
-      ],
+      "tags": ["passwords", "security", "vault"],
       "detect": [
-        {
-          "os": "linux",
-          "kind": "binary",
-          "value": "keepassxc"
-        },
-        {
-          "os": "linux",
-          "kind": "flatpak",
-          "value": "org.keepassxc.KeePassXC"
-        },
-        {
-          "os": "macos",
-          "kind": "macos_app",
-          "value": "/Applications/KeePassXC.app"
-        },
-        {
-          "os": "windows",
-          "kind": "binary",
-          "value": "KeePassXC.exe"
-        }
+        {"os": "linux", "kind": "binary", "value": "keepassxc"},
+        {"os": "linux", "kind": "flatpak", "value": "org.keepassxc.KeePassXC"},
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/KeePassXC.app"},
+        {"os": "windows", "kind": "binary", "value": "KeePassXC.exe"}
       ],
       "methods": [
-        {
-          "os": "linux",
-          "kind": "pacman",
-          "package": "keepassxc"
-        },
-        {
-          "os": "linux",
-          "kind": "apt",
-          "package": "keepassxc"
-        },
-        {
-          "os": "linux",
-          "kind": "dnf",
-          "package": "keepassxc"
-        },
-        {
-          "os": "linux",
-          "kind": "flatpak",
-          "package": "org.keepassxc.KeePassXC",
-          "remote": "flathub"
-        },
-        {
-          "os": "macos",
-          "kind": "brew",
-          "package": "keepassxc"
-        },
-        {
-          "os": "windows",
-          "kind": "winget",
-          "package": "KeePassXCTeam.KeePassXC"
-        }
+        {"os": "linux", "kind": "pacman", "package": "keepassxc"},
+        {"os": "linux", "kind": "apt", "package": "keepassxc"},
+        {"os": "linux", "kind": "dnf", "package": "keepassxc"},
+        {"os": "linux", "kind": "flatpak", "package": "org.keepassxc.KeePassXC", "remote": "flathub"},
+        {"os": "macos", "kind": "brew", "package": "keepassxc"},
+        {"os": "windows", "kind": "winget", "package": "KeePassXCTeam.KeePassXC"}
       ],
       "configs": [
-        {
-          "id": "config",
-          "label": "KeePassXC settings",
-          "paths": {
-            "linux": "~/.config/keepassxc",
-            "macos": "~/Library/Application Support/KeePassXC"
-          }
-        }
+        {"id": "config", "label": "KeePassXC settings", "paths": {"linux": "~/.config/keepassxc", "macos": "~/Library/Application Support/KeePassXC"}}
       ]
     },
     {
@@ -913,54 +321,19 @@
       "summary": "GPU-based terminal emulator with tabs, splits, and ligatures",
       "category": "Terminals",
       "homepage": "https://sw.kovidgoyal.net/kitty/",
-      "tags": [
-        "terminal",
-        "gpu",
-        "emulator"
-      ],
+      "tags": ["terminal", "gpu", "emulator"],
       "detect": [
-        {
-          "os": "linux",
-          "kind": "binary",
-          "value": "kitty"
-        },
-        {
-          "os": "macos",
-          "kind": "binary",
-          "value": "kitty"
-        }
+        {"os": "linux", "kind": "binary", "value": "kitty"},
+        {"os": "macos", "kind": "binary", "value": "kitty"}
       ],
       "methods": [
-        {
-          "os": "linux",
-          "kind": "pacman",
-          "package": "kitty"
-        },
-        {
-          "os": "linux",
-          "kind": "apt",
-          "package": "kitty"
-        },
-        {
-          "os": "linux",
-          "kind": "dnf",
-          "package": "kitty"
-        },
-        {
-          "os": "macos",
-          "kind": "brew",
-          "package": "kitty"
-        }
+        {"os": "linux", "kind": "pacman", "package": "kitty"},
+        {"os": "linux", "kind": "apt", "package": "kitty"},
+        {"os": "linux", "kind": "dnf", "package": "kitty"},
+        {"os": "macos", "kind": "brew", "package": "kitty"}
       ],
       "configs": [
-        {
-          "id": "config",
-          "label": "Kitty config",
-          "paths": {
-            "linux": "~/.config/kitty",
-            "macos": "~/.config/kitty"
-          }
-        }
+        {"id": "config", "label": "Kitty config", "paths": {"linux": "~/.config/kitty", "macos": "~/.config/kitty"}}
       ]
     },
     {
@@ -969,64 +342,22 @@
       "summary": "Simple terminal UI for Git commands",
       "category": "Development",
       "homepage": "https://github.com/jesseduffield/lazygit",
-      "tags": [
-        "git",
-        "tui",
-        "terminal"
-      ],
+      "tags": ["git", "tui", "terminal"],
       "detect": [
-        {
-          "os": "linux",
-          "kind": "binary",
-          "value": "lazygit"
-        },
-        {
-          "os": "macos",
-          "kind": "binary",
-          "value": "lazygit"
-        },
-        {
-          "os": "windows",
-          "kind": "binary",
-          "value": "lazygit.exe"
-        }
+        {"os": "linux", "kind": "binary", "value": "lazygit"},
+        {"os": "macos", "kind": "binary", "value": "lazygit"},
+        {"os": "windows", "kind": "binary", "value": "lazygit.exe"}
       ],
       "methods": [
-        {
-          "os": "linux",
-          "kind": "pacman",
-          "package": "lazygit"
-        },
-        {
-          "os": "linux",
-          "kind": "dnf",
-          "package": "lazygit"
-        },
-        {
-          "os": "macos",
-          "kind": "brew",
-          "package": "lazygit"
-        },
-        {
-          "os": "windows",
-          "kind": "winget",
-          "package": "JesseDuffield.lazygit"
-        }
+        {"os": "linux", "kind": "pacman", "package": "lazygit"},
+        {"os": "linux", "kind": "dnf", "package": "lazygit"},
+        {"os": "macos", "kind": "brew", "package": "lazygit"},
+        {"os": "windows", "kind": "winget", "package": "JesseDuffield.lazygit"}
       ],
       "configs": [
-        {
-          "id": "config",
-          "label": "Lazygit config",
-          "paths": {
-            "linux": "~/.config/lazygit",
-            "macos": "~/Library/Application Support/lazygit",
-            "windows": "%LOCALAPPDATA%\\lazygit"
-          }
-        }
+        {"id": "config", "label": "Lazygit config", "paths": {"linux": "~/.config/lazygit", "macos": "~/Library/Application Support/lazygit", "windows": "%LOCALAPPDATA%\\lazygit"}}
       ],
-      "depends": [
-        "git"
-      ]
+      "depends": ["git"]
     },
     {
       "id": "mpv",
@@ -1034,72 +365,22 @@
       "summary": "Minimalist, scriptable command-line video player",
       "category": "Media",
       "homepage": "https://mpv.io",
-      "tags": [
-        "video",
-        "player",
-        "media",
-        "minimal"
-      ],
+      "tags": ["video", "player", "media", "minimal"],
       "detect": [
-        {
-          "os": "linux",
-          "kind": "binary",
-          "value": "mpv"
-        },
-        {
-          "os": "linux",
-          "kind": "flatpak",
-          "value": "io.mpv.Mpv"
-        },
-        {
-          "os": "macos",
-          "kind": "binary",
-          "value": "mpv"
-        },
-        {
-          "os": "windows",
-          "kind": "binary",
-          "value": "mpv.exe"
-        }
+        {"os": "linux", "kind": "binary", "value": "mpv"},
+        {"os": "linux", "kind": "flatpak", "value": "io.mpv.Mpv"},
+        {"os": "macos", "kind": "binary", "value": "mpv"},
+        {"os": "windows", "kind": "binary", "value": "mpv.exe"}
       ],
       "methods": [
-        {
-          "os": "linux",
-          "kind": "pacman",
-          "package": "mpv"
-        },
-        {
-          "os": "linux",
-          "kind": "apt",
-          "package": "mpv"
-        },
-        {
-          "os": "linux",
-          "kind": "dnf",
-          "package": "mpv"
-        },
-        {
-          "os": "linux",
-          "kind": "flatpak",
-          "package": "io.mpv.Mpv",
-          "remote": "flathub"
-        },
-        {
-          "os": "macos",
-          "kind": "brew",
-          "package": "mpv"
-        }
+        {"os": "linux", "kind": "pacman", "package": "mpv"},
+        {"os": "linux", "kind": "apt", "package": "mpv"},
+        {"os": "linux", "kind": "dnf", "package": "mpv"},
+        {"os": "linux", "kind": "flatpak", "package": "io.mpv.Mpv", "remote": "flathub"},
+        {"os": "macos", "kind": "brew", "package": "mpv"}
       ],
       "configs": [
-        {
-          "id": "config",
-          "label": "mpv config & scripts",
-          "paths": {
-            "linux": "~/.config/mpv",
-            "macos": "~/.config/mpv",
-            "windows": "%APPDATA%\\mpv"
-          }
-        }
+        {"id": "config", "label": "mpv config & scripts", "paths": {"linux": "~/.config/mpv", "macos": "~/.config/mpv", "windows": "%APPDATA%\\mpv"}}
       ]
     },
     {
@@ -1108,72 +389,22 @@
       "summary": "Hyperextensible Vim-based text editor configured in Lua",
       "category": "Development",
       "homepage": "https://neovim.io",
-      "tags": [
-        "editor",
-        "vim",
-        "terminal",
-        "lua"
-      ],
+      "tags": ["editor", "vim", "terminal", "lua"],
       "detect": [
-        {
-          "os": "linux",
-          "kind": "binary",
-          "value": "nvim"
-        },
-        {
-          "os": "macos",
-          "kind": "binary",
-          "value": "nvim"
-        },
-        {
-          "os": "windows",
-          "kind": "binary",
-          "value": "nvim.exe"
-        }
+        {"os": "linux", "kind": "binary", "value": "nvim"},
+        {"os": "macos", "kind": "binary", "value": "nvim"},
+        {"os": "windows", "kind": "binary", "value": "nvim.exe"}
       ],
       "methods": [
-        {
-          "os": "linux",
-          "kind": "pacman",
-          "package": "neovim"
-        },
-        {
-          "os": "linux",
-          "kind": "apt",
-          "package": "neovim"
-        },
-        {
-          "os": "linux",
-          "kind": "dnf",
-          "package": "neovim"
-        },
-        {
-          "os": "linux",
-          "kind": "flatpak",
-          "package": "io.neovim.nvim",
-          "remote": "flathub"
-        },
-        {
-          "os": "macos",
-          "kind": "brew",
-          "package": "neovim"
-        },
-        {
-          "os": "windows",
-          "kind": "winget",
-          "package": "Neovim.Neovim"
-        }
+        {"os": "linux", "kind": "pacman", "package": "neovim"},
+        {"os": "linux", "kind": "apt", "package": "neovim"},
+        {"os": "linux", "kind": "dnf", "package": "neovim"},
+        {"os": "linux", "kind": "flatpak", "package": "io.neovim.nvim", "remote": "flathub"},
+        {"os": "macos", "kind": "brew", "package": "neovim"},
+        {"os": "windows", "kind": "winget", "package": "Neovim.Neovim"}
       ],
       "configs": [
-        {
-          "id": "config",
-          "label": "Neovim config (~/.config/nvim)",
-          "paths": {
-            "linux": "~/.config/nvim",
-            "macos": "~/.config/nvim",
-            "windows": "%LOCALAPPDATA%\\nvim"
-          }
-        }
+        {"id": "config", "label": "Neovim config (~/.config/nvim)", "paths": {"linux": "~/.config/nvim", "macos": "~/.config/nvim", "windows": "%LOCALAPPDATA%\\nvim"}}
       ]
     },
     {
@@ -1182,76 +413,23 @@
       "summary": "Open-source video recording and live streaming studio",
       "category": "Media",
       "homepage": "https://obsproject.com",
-      "tags": [
-        "streaming",
-        "recording",
-        "video"
-      ],
+      "tags": ["streaming", "recording", "video"],
       "detect": [
-        {
-          "os": "linux",
-          "kind": "binary",
-          "value": "obs"
-        },
-        {
-          "os": "linux",
-          "kind": "flatpak",
-          "value": "com.obsproject.Studio"
-        },
-        {
-          "os": "macos",
-          "kind": "macos_app",
-          "value": "/Applications/OBS.app"
-        },
-        {
-          "os": "windows",
-          "kind": "binary",
-          "value": "obs64.exe"
-        }
+        {"os": "linux", "kind": "binary", "value": "obs"},
+        {"os": "linux", "kind": "flatpak", "value": "com.obsproject.Studio"},
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/OBS.app"},
+        {"os": "windows", "kind": "binary", "value": "obs64.exe"}
       ],
       "methods": [
-        {
-          "os": "linux",
-          "kind": "pacman",
-          "package": "obs-studio"
-        },
-        {
-          "os": "linux",
-          "kind": "apt",
-          "package": "obs-studio"
-        },
-        {
-          "os": "linux",
-          "kind": "dnf",
-          "package": "obs-studio"
-        },
-        {
-          "os": "linux",
-          "kind": "flatpak",
-          "package": "com.obsproject.Studio",
-          "remote": "flathub"
-        },
-        {
-          "os": "macos",
-          "kind": "brew",
-          "package": "obs"
-        },
-        {
-          "os": "windows",
-          "kind": "winget",
-          "package": "OBSProject.OBSStudio"
-        }
+        {"os": "linux", "kind": "pacman", "package": "obs-studio"},
+        {"os": "linux", "kind": "apt", "package": "obs-studio"},
+        {"os": "linux", "kind": "dnf", "package": "obs-studio"},
+        {"os": "linux", "kind": "flatpak", "package": "com.obsproject.Studio", "remote": "flathub"},
+        {"os": "macos", "kind": "brew", "package": "obs"},
+        {"os": "windows", "kind": "winget", "package": "OBSProject.OBSStudio"}
       ],
       "configs": [
-        {
-          "id": "config",
-          "label": "OBS scenes & profiles",
-          "paths": {
-            "linux": "~/.config/obs-studio",
-            "macos": "~/Library/Application Support/obs-studio",
-            "windows": "%APPDATA%\\obs-studio"
-          }
-        }
+        {"id": "config", "label": "OBS scenes & profiles", "paths": {"linux": "~/.config/obs-studio", "macos": "~/Library/Application Support/obs-studio", "windows": "%APPDATA%\\obs-studio"}}
       ]
     },
     {
@@ -1260,67 +438,21 @@
       "summary": "Local-first Markdown knowledge base and note-taking app",
       "category": "Productivity",
       "homepage": "https://obsidian.md",
-      "tags": [
-        "notes",
-        "markdown",
-        "pkm",
-        "wiki"
-      ],
+      "tags": ["notes", "markdown", "pkm", "wiki"],
       "detect": [
-        {
-          "os": "linux",
-          "kind": "binary",
-          "value": "obsidian"
-        },
-        {
-          "os": "linux",
-          "kind": "flatpak",
-          "value": "md.obsidian.Obsidian"
-        },
-        {
-          "os": "macos",
-          "kind": "macos_app",
-          "value": "/Applications/Obsidian.app"
-        },
-        {
-          "os": "windows",
-          "kind": "binary",
-          "value": "Obsidian.exe"
-        }
+        {"os": "linux", "kind": "binary", "value": "obsidian"},
+        {"os": "linux", "kind": "flatpak", "value": "md.obsidian.Obsidian"},
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/Obsidian.app"},
+        {"os": "windows", "kind": "binary", "value": "Obsidian.exe"}
       ],
       "methods": [
-        {
-          "os": "linux",
-          "kind": "pacman",
-          "package": "obsidian"
-        },
-        {
-          "os": "linux",
-          "kind": "flatpak",
-          "package": "md.obsidian.Obsidian",
-          "remote": "flathub"
-        },
-        {
-          "os": "macos",
-          "kind": "brew",
-          "package": "obsidian"
-        },
-        {
-          "os": "windows",
-          "kind": "winget",
-          "package": "Obsidian.Obsidian"
-        }
+        {"os": "linux", "kind": "pacman", "package": "obsidian"},
+        {"os": "linux", "kind": "flatpak", "package": "md.obsidian.Obsidian", "remote": "flathub"},
+        {"os": "macos", "kind": "brew", "package": "obsidian"},
+        {"os": "windows", "kind": "winget", "package": "Obsidian.Obsidian"}
       ],
       "configs": [
-        {
-          "id": "config",
-          "label": "Obsidian app config",
-          "paths": {
-            "linux": "~/.config/obsidian",
-            "macos": "~/Library/Application Support/obsidian",
-            "windows": "%APPDATA%\\obsidian"
-          }
-        }
+        {"id": "config", "label": "Obsidian app config", "paths": {"linux": "~/.config/obsidian", "macos": "~/Library/Application Support/obsidian", "windows": "%APPDATA%\\obsidian"}}
       ]
     },
     {
@@ -1329,55 +461,18 @@
       "summary": "Ultra-fast recursive line search tool that respects .gitignore",
       "category": "CLI Tools",
       "homepage": "https://github.com/BurntSushi/ripgrep",
-      "tags": [
-        "search",
-        "grep",
-        "cli",
-        "rust"
-      ],
+      "tags": ["search", "grep", "cli", "rust"],
       "detect": [
-        {
-          "os": "linux",
-          "kind": "binary",
-          "value": "rg"
-        },
-        {
-          "os": "macos",
-          "kind": "binary",
-          "value": "rg"
-        },
-        {
-          "os": "windows",
-          "kind": "binary",
-          "value": "rg.exe"
-        }
+        {"os": "linux", "kind": "binary", "value": "rg"},
+        {"os": "macos", "kind": "binary", "value": "rg"},
+        {"os": "windows", "kind": "binary", "value": "rg.exe"}
       ],
       "methods": [
-        {
-          "os": "linux",
-          "kind": "pacman",
-          "package": "ripgrep"
-        },
-        {
-          "os": "linux",
-          "kind": "apt",
-          "package": "ripgrep"
-        },
-        {
-          "os": "linux",
-          "kind": "dnf",
-          "package": "ripgrep"
-        },
-        {
-          "os": "macos",
-          "kind": "brew",
-          "package": "ripgrep"
-        },
-        {
-          "os": "windows",
-          "kind": "winget",
-          "package": "BurntSushi.ripgrep.MSVC"
-        }
+        {"os": "linux", "kind": "pacman", "package": "ripgrep"},
+        {"os": "linux", "kind": "apt", "package": "ripgrep"},
+        {"os": "linux", "kind": "dnf", "package": "ripgrep"},
+        {"os": "macos", "kind": "brew", "package": "ripgrep"},
+        {"os": "windows", "kind": "winget", "package": "BurntSushi.ripgrep.MSVC"}
       ],
       "configs": []
     },
@@ -1387,71 +482,22 @@
       "summary": "Minimal, blazing-fast customizable prompt for any shell",
       "category": "CLI Tools",
       "homepage": "https://starship.rs",
-      "tags": [
-        "prompt",
-        "shell",
-        "rust",
-        "cli"
-      ],
+      "tags": ["prompt", "shell", "rust", "cli"],
       "detect": [
-        {
-          "os": "linux",
-          "kind": "binary",
-          "value": "starship"
-        },
-        {
-          "os": "macos",
-          "kind": "binary",
-          "value": "starship"
-        },
-        {
-          "os": "windows",
-          "kind": "binary",
-          "value": "starship.exe"
-        }
+        {"os": "linux", "kind": "binary", "value": "starship"},
+        {"os": "macos", "kind": "binary", "value": "starship"},
+        {"os": "windows", "kind": "binary", "value": "starship.exe"}
       ],
       "methods": [
-        {
-          "os": "linux",
-          "kind": "pacman",
-          "package": "starship"
-        },
-        {
-          "os": "linux",
-          "kind": "apt",
-          "package": "starship"
-        },
-        {
-          "os": "linux",
-          "kind": "dnf",
-          "package": "starship"
-        },
-        {
-          "os": "macos",
-          "kind": "brew",
-          "package": "starship"
-        },
-        {
-          "os": "windows",
-          "kind": "winget",
-          "package": "Starship.Starship"
-        },
-        {
-          "os": "linux",
-          "kind": "script",
-          "install_cmd": "curl -sS https://starship.rs/install.sh | sh -s -- -y"
-        }
+        {"os": "linux", "kind": "pacman", "package": "starship"},
+        {"os": "linux", "kind": "apt", "package": "starship"},
+        {"os": "linux", "kind": "dnf", "package": "starship"},
+        {"os": "macos", "kind": "brew", "package": "starship"},
+        {"os": "windows", "kind": "winget", "package": "Starship.Starship"},
+        {"os": "linux", "kind": "script", "install_cmd": "curl -sS https://starship.rs/install.sh | sh -s -- -y"}
       ],
       "configs": [
-        {
-          "id": "toml",
-          "label": "starship.toml",
-          "paths": {
-            "linux": "~/.config/starship.toml",
-            "macos": "~/.config/starship.toml",
-            "windows": "%USERPROFILE%\\.config\\starship.toml"
-          }
-        }
+        {"id": "toml", "label": "starship.toml", "paths": {"linux": "~/.config/starship.toml", "macos": "~/.config/starship.toml", "windows": "%USERPROFILE%\\.config\\starship.toml"}}
       ]
     },
     {
@@ -1460,54 +506,19 @@
       "summary": "Terminal multiplexer for persistent sessions, panes, and windows",
       "category": "Terminals",
       "homepage": "https://github.com/tmux/tmux",
-      "tags": [
-        "terminal",
-        "multiplexer",
-        "cli"
-      ],
+      "tags": ["terminal", "multiplexer", "cli"],
       "detect": [
-        {
-          "os": "linux",
-          "kind": "binary",
-          "value": "tmux"
-        },
-        {
-          "os": "macos",
-          "kind": "binary",
-          "value": "tmux"
-        }
+        {"os": "linux", "kind": "binary", "value": "tmux"},
+        {"os": "macos", "kind": "binary", "value": "tmux"}
       ],
       "methods": [
-        {
-          "os": "linux",
-          "kind": "pacman",
-          "package": "tmux"
-        },
-        {
-          "os": "linux",
-          "kind": "apt",
-          "package": "tmux"
-        },
-        {
-          "os": "linux",
-          "kind": "dnf",
-          "package": "tmux"
-        },
-        {
-          "os": "macos",
-          "kind": "brew",
-          "package": "tmux"
-        }
+        {"os": "linux", "kind": "pacman", "package": "tmux"},
+        {"os": "linux", "kind": "apt", "package": "tmux"},
+        {"os": "linux", "kind": "dnf", "package": "tmux"},
+        {"os": "macos", "kind": "brew", "package": "tmux"}
       ],
       "configs": [
-        {
-          "id": "tmux-conf",
-          "label": "tmux config (~/.tmux.conf)",
-          "paths": {
-            "linux": "~/.tmux.conf",
-            "macos": "~/.tmux.conf"
-          }
-        }
+        {"id": "tmux-conf", "label": "tmux config (~/.tmux.conf)", "paths": {"linux": "~/.tmux.conf", "macos": "~/.tmux.conf"}}
       ]
     },
     {
@@ -1516,77 +527,23 @@
       "summary": "Extensible source-code editor with debugging, Git, and extensions",
       "category": "Development",
       "homepage": "https://code.visualstudio.com",
-      "tags": [
-        "editor",
-        "ide",
-        "code",
-        "microsoft"
-      ],
+      "tags": ["editor", "ide", "code", "microsoft"],
       "detect": [
-        {
-          "os": "linux",
-          "kind": "binary",
-          "value": "code"
-        },
-        {
-          "os": "linux",
-          "kind": "flatpak",
-          "value": "com.visualstudio.code"
-        },
-        {
-          "os": "macos",
-          "kind": "binary",
-          "value": "code"
-        },
-        {
-          "os": "macos",
-          "kind": "macos_app",
-          "value": "/Applications/Visual Studio Code.app"
-        },
-        {
-          "os": "windows",
-          "kind": "binary",
-          "value": "code.exe"
-        }
+        {"os": "linux", "kind": "binary", "value": "code"},
+        {"os": "linux", "kind": "flatpak", "value": "com.visualstudio.code"},
+        {"os": "macos", "kind": "binary", "value": "code"},
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/Visual Studio Code.app"},
+        {"os": "windows", "kind": "binary", "value": "code.exe"}
       ],
       "methods": [
-        {
-          "os": "linux",
-          "kind": "pacman",
-          "package": "code"
-        },
-        {
-          "os": "linux",
-          "kind": "aur",
-          "package": "visual-studio-code-bin"
-        },
-        {
-          "os": "linux",
-          "kind": "flatpak",
-          "package": "com.visualstudio.code",
-          "remote": "flathub"
-        },
-        {
-          "os": "macos",
-          "kind": "brew",
-          "package": "visual-studio-code"
-        },
-        {
-          "os": "windows",
-          "kind": "winget",
-          "package": "Microsoft.VisualStudioCode"
-        }
+        {"os": "linux", "kind": "pacman", "package": "code"},
+        {"os": "linux", "kind": "aur", "package": "visual-studio-code-bin"},
+        {"os": "linux", "kind": "flatpak", "package": "com.visualstudio.code", "remote": "flathub"},
+        {"os": "macos", "kind": "brew", "package": "visual-studio-code"},
+        {"os": "windows", "kind": "winget", "package": "Microsoft.VisualStudioCode"}
       ],
       "configs": [
-        {
-          "id": "user-settings",
-          "label": "User settings & keybindings",
-          "paths": {
-            "linux": "~/.config/Code/User",
-            "macos": "~/Library/Application Support/Code/User",
-            "windows": "%APPDATA%\\Code\\User"
-          }
-        }
+        {"id": "user-settings", "label": "User settings & keybindings", "paths": {"linux": "~/.config/Code/User", "macos": "~/Library/Application Support/Code/User", "windows": "%APPDATA%\\Code\\User"}}
       ]
     },
     {
@@ -1595,76 +552,23 @@
       "summary": "Open-source cross-platform multimedia player for almost any format",
       "category": "Media",
       "homepage": "https://www.videolan.org/vlc/",
-      "tags": [
-        "video",
-        "audio",
-        "player",
-        "media"
-      ],
+      "tags": ["video", "audio", "player", "media"],
       "detect": [
-        {
-          "os": "linux",
-          "kind": "binary",
-          "value": "vlc"
-        },
-        {
-          "os": "linux",
-          "kind": "flatpak",
-          "value": "org.videolan.VLC"
-        },
-        {
-          "os": "macos",
-          "kind": "macos_app",
-          "value": "/Applications/VLC.app"
-        },
-        {
-          "os": "windows",
-          "kind": "binary",
-          "value": "vlc.exe"
-        }
+        {"os": "linux", "kind": "binary", "value": "vlc"},
+        {"os": "linux", "kind": "flatpak", "value": "org.videolan.VLC"},
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/VLC.app"},
+        {"os": "windows", "kind": "binary", "value": "vlc.exe"}
       ],
       "methods": [
-        {
-          "os": "linux",
-          "kind": "pacman",
-          "package": "vlc"
-        },
-        {
-          "os": "linux",
-          "kind": "apt",
-          "package": "vlc"
-        },
-        {
-          "os": "linux",
-          "kind": "dnf",
-          "package": "vlc"
-        },
-        {
-          "os": "linux",
-          "kind": "flatpak",
-          "package": "org.videolan.VLC",
-          "remote": "flathub"
-        },
-        {
-          "os": "macos",
-          "kind": "brew",
-          "package": "vlc"
-        },
-        {
-          "os": "windows",
-          "kind": "winget",
-          "package": "VideoLAN.VLC"
-        }
+        {"os": "linux", "kind": "pacman", "package": "vlc"},
+        {"os": "linux", "kind": "apt", "package": "vlc"},
+        {"os": "linux", "kind": "dnf", "package": "vlc"},
+        {"os": "linux", "kind": "flatpak", "package": "org.videolan.VLC", "remote": "flathub"},
+        {"os": "macos", "kind": "brew", "package": "vlc"},
+        {"os": "windows", "kind": "winget", "package": "VideoLAN.VLC"}
       ],
       "configs": [
-        {
-          "id": "config",
-          "label": "VLC preferences",
-          "paths": {
-            "linux": "~/.config/vlc",
-            "macos": "~/Library/Preferences/org.videolan.vlc"
-          }
-        }
+        {"id": "config", "label": "VLC preferences", "paths": {"linux": "~/.config/vlc", "macos": "~/Library/Preferences/org.videolan.vlc"}}
       ]
     },
     {
@@ -1673,57 +577,18 @@
       "summary": "Valk package manager and compiler version manager",
       "category": "Development",
       "homepage": "https://valk-lang.dev",
-      "tags": [
-        "valk",
-        "package-manager",
-        "compiler",
-        "cli"
-      ],
+      "tags": ["valk", "package-manager", "compiler", "cli"],
       "detect": [
-        {
-          "os": "linux",
-          "kind": "binary",
-          "value": "vman"
-        },
-        {
-          "os": "linux",
-          "kind": "path",
-          "value": "~/.vman/bin/vman"
-        },
-        {
-          "os": "macos",
-          "kind": "binary",
-          "value": "vman"
-        },
-        {
-          "os": "macos",
-          "kind": "path",
-          "value": "~/.vman/bin/vman"
-        },
-        {
-          "os": "windows",
-          "kind": "binary",
-          "value": "vman.exe"
-        }
+        {"os": "linux", "kind": "binary", "value": "vman"},
+        {"os": "linux", "kind": "path", "value": "~/.vman/bin/vman"},
+        {"os": "macos", "kind": "binary", "value": "vman"},
+        {"os": "macos", "kind": "path", "value": "~/.vman/bin/vman"},
+        {"os": "windows", "kind": "binary", "value": "vman.exe"}
       ],
       "methods": [
-        {
-          "os": "linux",
-          "kind": "script",
-          "install_cmd": "curl -sSL https://valk-lang.dev/vman.sh | bash",
-          "update_cmd": "vman self-update"
-        },
-        {
-          "os": "macos",
-          "kind": "script",
-          "install_cmd": "curl -sSL https://valk-lang.dev/vman.sh | bash",
-          "update_cmd": "vman self-update"
-        },
-        {
-          "os": "windows",
-          "kind": "script",
-          "install_cmd": "powershell -NoProfile -Command \"irm https://valk-lang.dev/vman.ps1 | iex\""
-        }
+        {"os": "linux", "kind": "script", "install_cmd": "curl -sSL https://valk-lang.dev/vman.sh | bash", "update_cmd": "vman self-update"},
+        {"os": "macos", "kind": "script", "install_cmd": "curl -sSL https://valk-lang.dev/vman.sh | bash", "update_cmd": "vman self-update"},
+        {"os": "windows", "kind": "script", "install_cmd": "powershell -NoProfile -Command \"irm https://valk-lang.dev/vman.ps1 | iex\""}
       ],
       "configs": []
     },
@@ -1733,66 +598,21 @@
       "summary": "High-performance, GPU-accelerated code editor written in Rust",
       "category": "Development",
       "homepage": "https://zed.dev",
-      "tags": [
-        "editor",
-        "ide",
-        "rust",
-        "fast"
-      ],
+      "tags": ["editor", "ide", "rust", "fast"],
       "detect": [
-        {
-          "os": "linux",
-          "kind": "binary",
-          "value": "zed"
-        },
-        {
-          "os": "linux",
-          "kind": "flatpak",
-          "value": "dev.zed.Zed"
-        },
-        {
-          "os": "macos",
-          "kind": "macos_app",
-          "value": "/Applications/Zed.app"
-        },
-        {
-          "os": "windows",
-          "kind": "binary",
-          "value": "zed.exe"
-        }
+        {"os": "linux", "kind": "binary", "value": "zed"},
+        {"os": "linux", "kind": "flatpak", "value": "dev.zed.Zed"},
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/Zed.app"},
+        {"os": "windows", "kind": "binary", "value": "zed.exe"}
       ],
       "methods": [
-        {
-          "os": "linux",
-          "kind": "pacman",
-          "package": "zed"
-        },
-        {
-          "os": "linux",
-          "kind": "flatpak",
-          "package": "dev.zed.Zed",
-          "remote": "flathub"
-        },
-        {
-          "os": "macos",
-          "kind": "brew",
-          "package": "zed"
-        },
-        {
-          "os": "linux",
-          "kind": "script",
-          "install_cmd": "curl -f https://zed.dev/install.sh | sh"
-        }
+        {"os": "linux", "kind": "pacman", "package": "zed"},
+        {"os": "linux", "kind": "flatpak", "package": "dev.zed.Zed", "remote": "flathub"},
+        {"os": "macos", "kind": "brew", "package": "zed"},
+        {"os": "linux", "kind": "script", "install_cmd": "curl -f https://zed.dev/install.sh | sh"}
       ],
       "configs": [
-        {
-          "id": "config",
-          "label": "Zed settings & keymap",
-          "paths": {
-            "linux": "~/.config/zed",
-            "macos": "~/.config/zed"
-          }
-        }
+        {"id": "config", "label": "Zed settings & keymap", "paths": {"linux": "~/.config/zed", "macos": "~/.config/zed"}}
       ]
     },
     {
@@ -1801,54 +621,19 @@
       "summary": "Powerful interactive Unix shell with completions and themes",
       "category": "Terminals",
       "homepage": "https://www.zsh.org",
-      "tags": [
-        "shell",
-        "terminal",
-        "cli"
-      ],
+      "tags": ["shell", "terminal", "cli"],
       "detect": [
-        {
-          "os": "linux",
-          "kind": "binary",
-          "value": "zsh"
-        },
-        {
-          "os": "macos",
-          "kind": "binary",
-          "value": "zsh"
-        }
+        {"os": "linux", "kind": "binary", "value": "zsh"},
+        {"os": "macos", "kind": "binary", "value": "zsh"}
       ],
       "methods": [
-        {
-          "os": "linux",
-          "kind": "pacman",
-          "package": "zsh"
-        },
-        {
-          "os": "linux",
-          "kind": "apt",
-          "package": "zsh"
-        },
-        {
-          "os": "linux",
-          "kind": "dnf",
-          "package": "zsh"
-        },
-        {
-          "os": "macos",
-          "kind": "brew",
-          "package": "zsh"
-        }
+        {"os": "linux", "kind": "pacman", "package": "zsh"},
+        {"os": "linux", "kind": "apt", "package": "zsh"},
+        {"os": "linux", "kind": "dnf", "package": "zsh"},
+        {"os": "macos", "kind": "brew", "package": "zsh"}
       ],
       "configs": [
-        {
-          "id": "zshrc",
-          "label": "Zsh config (~/.zshrc)",
-          "paths": {
-            "linux": "~/.zshrc",
-            "macos": "~/.zshrc"
-          }
-        }
+        {"id": "zshrc", "label": "Zsh config (~/.zshrc)", "paths": {"linux": "~/.zshrc", "macos": "~/.zshrc"}}
       ]
     }
   ]
