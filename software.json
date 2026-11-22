@@ -285,9 +285,9 @@
         {"os": "windows", "kind": "binary", "value": "jolt.exe", "version_args": ["--version"]}
       ],
       "methods": [
-        {"os": "linux", "kind": "sh", "install_cmd": "vman global install github.com/ctxcode/jolt", "update_cmd": "vman global install github.com/ctxcode/jolt", "uninstall_cmd": "vman global remove github.com/ctxcode/jolt"},
-        {"os": "macos", "kind": "sh", "install_cmd": "vman global install github.com/ctxcode/jolt", "update_cmd": "vman global install github.com/ctxcode/jolt", "uninstall_cmd": "vman global remove github.com/ctxcode/jolt"},
-        {"os": "windows", "kind": "powershell", "install_cmd": "vman global install github.com/ctxcode/jolt", "update_cmd": "vman global install github.com/ctxcode/jolt", "uninstall_cmd": "vman global remove github.com/ctxcode/jolt"}
+        {"os": "linux", "kind": "sh", "install_cmd": "vman global install github.com/ctxcode/jolt", "uninstall_cmd": "vman global remove github.com/ctxcode/jolt"},
+        {"os": "macos", "kind": "sh", "install_cmd": "vman global install github.com/ctxcode/jolt", "uninstall_cmd": "vman global remove github.com/ctxcode/jolt"},
+        {"os": "windows", "kind": "powershell", "install_cmd": "vman global install github.com/ctxcode/jolt", "uninstall_cmd": "vman global remove github.com/ctxcode/jolt"}
       ],
       "configs": [],
       "depends": ["vman"]
@@ -588,9 +588,9 @@
         {"os": "windows", "kind": "binary", "value": "vman.exe"}
       ],
       "methods": [
-        {"os": "linux", "kind": "bash", "install_cmd": "curl -sSL https://valk-lang.dev/vman.sh | bash", "update_cmd": "vman self-update"},
-        {"os": "macos", "kind": "bash", "install_cmd": "curl -sSL https://valk-lang.dev/vman.sh | bash", "update_cmd": "vman self-update"},
-        {"os": "windows", "kind": "powershell", "install_cmd": "irm https://valk-lang.dev/vman.ps1 | iex", "update_cmd": "vman self-update"}
+        {"os": "linux", "kind": "bash", "install_cmd": "curl -sSL https://valk-lang.dev/vman.sh | bash"},
+        {"os": "macos", "kind": "bash", "install_cmd": "curl -sSL https://valk-lang.dev/vman.sh | bash"},
+        {"os": "windows", "kind": "powershell", "install_cmd": "irm https://valk-lang.dev/vman.ps1 | iex"}
       ],
       "configs": []
     },

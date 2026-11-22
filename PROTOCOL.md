@@ -30,7 +30,7 @@ This document defines the open JSON protocol used by `software.json` so any soft
 | `tags` | `string[]` | No | Search keywords. |
 | `depends` | `string[]` | No | Software IDs that must be installed first. Dependency cycles are invalid and must be rejected. |
 | `detect` | `DetectRule[]` | No | Ordered list of rules to check if the software is already installed. |
-| `methods` | `InstallMethod[]` | No | Ordered list of ways to install, update, or uninstall the software. |
+| `methods` | `InstallMethod[]` | No | Ordered list of ways to install or uninstall the software. |
 | `configs` | `ConfigSpec[]` | No | User configuration files or directories suitable for backup/sync. |
 
 ## Detection Rules (`detect`)
@@ -63,9 +63,9 @@ Supported `kind` values:
 - `macos_app`: macOS `.app` bundle path (e.g. `"/Applications/Firefox.app"`).
 - `command`: Shell command whose exit code `0` indicates installed.
 
-## Install / Update / Uninstall Methods (`methods`)
+## Install / Uninstall Methods (`methods`)
 
-Each entry in `methods` describes one provider-backed or custom way to manage the software on a given OS. Consumers pick the first compatible method available on the host (respecting optional `priority`, higher first, or user preference).
+Each entry in `methods` describes one provider-backed or custom way to install or uninstall the software on a given OS. Consumers pick the first compatible method available on the host (respecting optional `priority`, higher first, or user preference).
 
 ```json
 {
@@ -75,14 +75,13 @@ Each entry in `methods` describes one provider-backed or custom way to manage th
 }
 ```
 
-Shell installer example with explicit update and uninstall hooks:
+Shell installer example with explicit uninstall hook:
 
 ```json
 {
   "os": "linux",
   "kind": "bash",
   "install_cmd": "curl -sSL https://valk-lang.dev/vman.sh | bash",
-  "update_cmd": "vman self-update",
   "uninstall_cmd": "rm -rf ~/.vman"
 }
 ```
@@ -93,8 +92,7 @@ Windows PowerShell example:
 {
   "os": "windows",
   "kind": "powershell",
-  "install_cmd": "irm https://valk-lang.dev/vman.ps1 | iex",
-  "update_cmd": "vman self-update"
+  "install_cmd": "irm https://valk-lang.dev/vman.ps1 | iex"
 }
 ```
 
@@ -119,7 +117,6 @@ Linux AppImage example:
 | `url` | `string` | Conditional | Direct download URL for `appimage` methods. |
 | `sha256` | `string` | No | Optional 64-character hex SHA-256 checksum for `appimage` downloads. |
 | `install_cmd` | `string` | Conditional | Command for shell kinds (`sh`, `bash`, `powershell`, `cmd`), or custom install override. |
-| `update_cmd` | `string` | No | Command to update the software (for shell kinds or custom updaters). |
 | `uninstall_cmd` | `string` | No | Command to uninstall the software. |
 | `priority` | `integer` | No | Optional preference weight (default `0`; higher preferred). |
 
@@ -129,7 +126,7 @@ Supported `kind` values:
 - Windows: `winget`, `scoop`, `choco`
 - Shell runners: `sh` (`/bin/sh -c`), `bash` (`bash -c`), `powershell` (`pwsh` / `powershell -NoProfile -Command`), `cmd` (`cmd /C`)
 
-Standard package-manager kinds (`pacman`, `aur`, `apt`, `dnf`, `flatpak`, `brew`, `brew_cask`, `winget`, `scoop`, etc.) have well-known install, update, and uninstall commands so entries only need `package` unless custom behavior is required. For language/ecosystem tools like `vman`, `cargo`, `npm`, or `pipx`, use a shell runner (`sh`, `powershell`, etc.) together with `depends`.
+Standard package-manager kinds (`pacman`, `aur`, `apt`, `dnf`, `flatpak`, `brew`, `brew_cask`, `winget`, `scoop`, etc.) have well-known install and uninstall commands so entries only need `package` unless custom behavior is required. For language/ecosystem tools like `vman`, `cargo`, `npm`, or `pipx`, use a shell runner (`sh`, `powershell`, etc.) together with `depends`.
 
 ## Dependencies (`depends`)
 

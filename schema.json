@@ -58,7 +58,6 @@
                 "url": { "type": "string" },
                 "sha256": { "type": "string", "pattern": "^[0-9a-fA-F]{64}$" },
                 "install_cmd": { "type": "string" },
-                "update_cmd": { "type": "string" },
                 "uninstall_cmd": { "type": "string" },
                 "priority": { "type": "integer" }
               }
