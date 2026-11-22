@@ -16,7 +16,7 @@ An open, tool-agnostic JSON catalog of software describing how applications can 
 Fetch the latest catalog directly from GitHub:
 
 ```text
-https://raw.githubusercontent.com/ctxcode/the-software-list/main/software.json
+https://raw.githubusercontent.com/zapps-labs/the-software-list/main/software.json
 ```
 
 ## Contributing

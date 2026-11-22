@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/ctxcode/the-software-list/main/schema.json",
+  "$id": "https://raw.githubusercontent.com/zapps-labs/the-software-list/main/schema.json",
   "title": "The Software List Catalog",
   "type": "object",
   "required": ["schema_version", "software"],
