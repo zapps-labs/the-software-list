@@ -4,9 +4,11 @@
 
 # The Software List
 
-An open, tool-agnostic JSON catalog of software describing how applications can be **installed**, **detected**, **updated**, **uninstalled**, and how their **configuration files** are located across Linux, macOS, and Windows.
+An open software list that is free to be used by any app, installer or operating system. The goal is to make software more widely available, easier to find and installed.
 
-`the-software-list` is not tied to any single app manager — it is designed to be consumed by GUI installers (such as `zapps`), CLI provisioners, dotfile managers, and AI agents.
+You can add your software by modifying `software.json` and opening a pull request. Then we will validate your entry and merge it so it becomes available to the world.
+
+The software list is for both open & closed software. We dont refuse any additions other than clearly malicious software. Although the ultimate responsibility of security stays with the user.
 
 ## Files
 
