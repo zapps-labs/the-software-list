@@ -50,7 +50,8 @@
                     "brew", "brew_cask",
                     "winget", "scoop", "choco",
                     "vman_global", "cargo", "npm", "pipx",
-                    "script", "download", "github_release"
+                    "sh", "bash", "powershell", "cmd",
+                    "download", "github_release"
                   ]
                 },
                 "package": { "type": "string" },

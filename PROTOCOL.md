@@ -75,30 +75,41 @@ Each entry in `methods` describes one provider-backed or custom way to manage th
 }
 ```
 
-Custom script / installer example with explicit update and uninstall hooks:
+Shell installer example with explicit update and uninstall hooks:
 
 ```json
 {
   "os": "linux",
-  "kind": "script",
+  "kind": "bash",
   "install_cmd": "curl -sSL https://valk-lang.dev/vman.sh | bash",
   "update_cmd": "vman self-update",
   "uninstall_cmd": "rm -rf ~/.vman"
 }
 ```
 
+Windows PowerShell example:
+
+```json
+{
+  "os": "windows",
+  "kind": "powershell",
+  "install_cmd": "irm https://valk-lang.dev/vman.ps1 | iex",
+  "update_cmd": "vman self-update"
+}
+```
+
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `os` | `string` | Yes | `"linux"`, `"macos"`, `"windows"`, or `"any"`. |
-| `kind` | `string` | Yes | Provider kind (see below). |
+| `kind` | `string` | Yes | Provider or shell runner kind (see below). |
 | `package` | `string` | Conditional | Package identifier for package-manager kinds (e.g. `"neovim"`, `"Mozilla.Firefox"`, `"github.com/ctxcode/jolt"`). |
 | `remote` | `string` | No | Optional remote/tap/repo name (e.g. `"flathub"`, Homebrew tap, COPR, PPA). |
 | `arch` | `string[]` | No | Optional architecture filter (e.g. `["x86_64", "arm64"]`). Omit if all architectures are supported. |
 | `url` | `string` | Conditional | Direct download URL for `download` / `appimage` methods. |
 | `sha256` | `string` | No | Optional SHA-256 checksum for direct downloads. |
-| `install_cmd` | `string` | Conditional | Shell command for `script` installs (or custom install override). |
-| `update_cmd` | `string` | No | Shell command to update the software (for non-package-manager methods or custom updaters). |
-| `uninstall_cmd` | `string` | No | Shell command to uninstall the software. |
+| `install_cmd` | `string` | Conditional | Command for shell kinds (`sh`, `bash`, `powershell`, `cmd`), or custom install override. |
+| `update_cmd` | `string` | No | Command to update the software (for shell kinds or custom updaters). |
+| `uninstall_cmd` | `string` | No | Command to uninstall the software. |
 | `priority` | `integer` | No | Optional preference weight (default `0`; higher preferred). |
 
 Supported `kind` values:
@@ -106,7 +117,8 @@ Supported `kind` values:
 - macOS: `brew`, `brew_cask`
 - Windows: `winget`, `scoop`, `choco`
 - Language / tool ecosystems: `vman_global`, `cargo`, `npm`, `pipx`
-- Generic: `script`, `download`, `github_release`
+- Shell runners: `sh` (`/bin/sh -c`), `bash` (`bash -c`), `powershell` (`pwsh` / `powershell -NoProfile -Command`), `cmd` (`cmd /C`)
+- Generic: `download`, `github_release`
 
 Standard package-manager kinds (`pacman`, `aur`, `apt`, `dnf`, `flatpak`, `brew`, `brew_cask`, `winget`, `scoop`, `vman_global`, etc.) have well-known install, update, and uninstall commands so entries only need `package` unless custom behavior is required.
 

@@ -494,7 +494,7 @@
         {"os": "linux", "kind": "dnf", "package": "starship"},
         {"os": "macos", "kind": "brew", "package": "starship"},
         {"os": "windows", "kind": "winget", "package": "Starship.Starship"},
-        {"os": "linux", "kind": "script", "install_cmd": "curl -sS https://starship.rs/install.sh | sh -s -- -y"}
+        {"os": "linux", "kind": "sh", "install_cmd": "curl -sS https://starship.rs/install.sh | sh -s -- -y"}
       ],
       "configs": [
         {"id": "toml", "label": "starship.toml", "paths": {"linux": "~/.config/starship.toml", "macos": "~/.config/starship.toml", "windows": "%USERPROFILE%\\.config\\starship.toml"}}
@@ -586,9 +586,9 @@
         {"os": "windows", "kind": "binary", "value": "vman.exe"}
       ],
       "methods": [
-        {"os": "linux", "kind": "script", "install_cmd": "curl -sSL https://valk-lang.dev/vman.sh | bash", "update_cmd": "vman self-update"},
-        {"os": "macos", "kind": "script", "install_cmd": "curl -sSL https://valk-lang.dev/vman.sh | bash", "update_cmd": "vman self-update"},
-        {"os": "windows", "kind": "script", "install_cmd": "powershell -NoProfile -Command \"irm https://valk-lang.dev/vman.ps1 | iex\""}
+        {"os": "linux", "kind": "bash", "install_cmd": "curl -sSL https://valk-lang.dev/vman.sh | bash", "update_cmd": "vman self-update"},
+        {"os": "macos", "kind": "bash", "install_cmd": "curl -sSL https://valk-lang.dev/vman.sh | bash", "update_cmd": "vman self-update"},
+        {"os": "windows", "kind": "powershell", "install_cmd": "irm https://valk-lang.dev/vman.ps1 | iex", "update_cmd": "vman self-update"}
       ],
       "configs": []
     },
@@ -609,7 +609,7 @@
         {"os": "linux", "kind": "pacman", "package": "zed"},
         {"os": "linux", "kind": "flatpak", "package": "dev.zed.Zed", "remote": "flathub"},
         {"os": "macos", "kind": "brew", "package": "zed"},
-        {"os": "linux", "kind": "script", "install_cmd": "curl -f https://zed.dev/install.sh | sh"}
+        {"os": "linux", "kind": "sh", "install_cmd": "curl -f https://zed.dev/install.sh | sh"}
       ],
       "configs": [
         {"id": "config", "label": "Zed settings & keymap", "paths": {"linux": "~/.config/zed", "macos": "~/.config/zed"}}

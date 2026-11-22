@@ -8,14 +8,15 @@ from pathlib import Path
 
 VALID_OS = {"linux", "macos", "windows", "any"}
 VALID_DETECT = {"binary", "path", "flatpak", "snap", "macos_app", "command"}
+SHELL_METHODS = {"sh", "bash", "powershell", "cmd"}
 VALID_METHODS = {
     "pacman", "aur", "apt", "dnf", "zypper", "apk",
     "flatpak", "snap", "nix", "appimage",
     "brew", "brew_cask",
     "winget", "scoop", "choco",
     "vman_global", "cargo", "npm", "pipx",
-    "script", "download", "github_release",
-}
+    "download", "github_release",
+} | SHELL_METHODS
 ID_RE = re.compile(r"^[a-z0-9][a-z0-9-]*$")
 
 
@@ -60,9 +61,9 @@ def main() -> int:
             kind = method.get("kind")
             if kind not in VALID_METHODS:
                 errors.append(f"{ctx}.methods[{mi}]: invalid kind '{kind}'")
-            if kind == "script":
+            if kind in SHELL_METHODS:
                 if not method.get("install_cmd"):
-                    errors.append(f"{ctx}.methods[{mi}]: script method needs install_cmd")
+                    errors.append(f"{ctx}.methods[{mi}]: {kind} method needs install_cmd")
             elif kind in ("download", "appimage"):
                 if not method.get("url"):
                     errors.append(f"{ctx}.methods[{mi}]: {kind} method needs url")
