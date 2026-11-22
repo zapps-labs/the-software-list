@@ -49,7 +49,7 @@
                     "flatpak", "snap", "nix", "appimage",
                     "brew", "brew_cask",
                     "winget", "scoop", "choco",
-                    "vman_global", "cargo", "npm", "pipx",
+                    "vman", "cargo", "npm", "pipx",
                     "sh", "bash", "powershell", "cmd",
                     "download", "github_release"
                   ]

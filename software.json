@@ -285,7 +285,7 @@
         {"os": "windows", "kind": "binary", "value": "jolt.exe", "version_args": ["--version"]}
       ],
       "methods": [
-        {"os": "any", "kind": "vman_global", "package": "github.com/ctxcode/jolt"}
+        {"os": "any", "kind": "vman", "package": "github.com/ctxcode/jolt"}
       ],
       "configs": [],
       "depends": ["vman"]

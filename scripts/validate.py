@@ -14,7 +14,7 @@ VALID_METHODS = {
     "flatpak", "snap", "nix", "appimage",
     "brew", "brew_cask",
     "winget", "scoop", "choco",
-    "vman_global", "cargo", "npm", "pipx",
+    "vman", "cargo", "npm", "pipx",
     "download", "github_release",
 } | SHELL_METHODS
 ID_RE = re.compile(r"^[a-z0-9][a-z0-9-]*$")
