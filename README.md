@@ -8,7 +8,7 @@ An open software list that is free to be used by any app, installer or operating
 
 You can add your software by modifying `software.json` and opening a pull request. Then we will validate your entry and merge it so it becomes available to the world.
 
-The software list is for both open & closed software. We dont refuse any additions other than clearly malicious software. Although the ultimate responsibility of security stays with the user.
+The software list is for both open & closed software. We dont refuse any additions other than clearly malicious software. Although the ultimate responsibility of security stays with the consumers of this list.
 
 ## Files
 
