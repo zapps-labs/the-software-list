@@ -11,11 +11,12 @@ VALID_DETECT = {"binary", "path", "flatpak", "snap", "macos_app", "command"}
 SHELL_METHODS = {"sh", "bash", "powershell", "cmd"}
 VALID_METHODS = {
     "pacman", "aur", "apt", "dnf", "zypper", "apk",
-    "flatpak", "snap", "nix",
+    "flatpak", "snap", "nix", "appimage",
     "brew", "brew_cask",
     "winget", "scoop", "choco",
 } | SHELL_METHODS
 ID_RE = re.compile(r"^[a-z0-9][a-z0-9-]*$")
+SHA256_RE = re.compile(r"^[0-9a-fA-F]{64}$")
 
 
 def main() -> int:
@@ -62,6 +63,12 @@ def main() -> int:
             if kind in SHELL_METHODS:
                 if not method.get("install_cmd"):
                     errors.append(f"{ctx}.methods[{mi}]: {kind} method needs install_cmd")
+            elif kind == "appimage":
+                if not method.get("url"):
+                    errors.append(f"{ctx}.methods[{mi}]: appimage method needs url")
+                sha = method.get("sha256")
+                if sha is not None and (not isinstance(sha, str) or not SHA256_RE.match(sha)):
+                    errors.append(f"{ctx}.methods[{mi}]: invalid sha256 '{sha}'")
             else:
                 if not method.get("package"):
                     errors.append(f"{ctx}.methods[{mi}]: {kind} method needs package")

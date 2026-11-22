@@ -98,20 +98,33 @@ Windows PowerShell example:
 }
 ```
 
+Linux AppImage example:
+
+```json
+{
+  "os": "linux",
+  "kind": "appimage",
+  "url": "https://example.com/releases/latest/MyApp-x86_64.AppImage",
+  "arch": ["x86_64"]
+}
+```
+
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `os` | `string` | Yes | `"linux"`, `"macos"`, `"windows"`, or `"any"`. |
 | `kind` | `string` | Yes | Provider or shell runner kind (see below). |
-| `package` | `string` | Conditional | Package identifier for package-manager kinds (e.g. `"neovim"`, `"Mozilla.Firefox"`, `"github.com/ctxcode/jolt"`). |
+| `package` | `string` | Conditional | Package identifier for package-manager kinds (e.g. `"neovim"`, `"Mozilla.Firefox"`). |
 | `remote` | `string` | No | Optional remote/tap/repo name (e.g. `"flathub"`, Homebrew tap, COPR, PPA). |
 | `arch` | `string[]` | No | Optional architecture filter (e.g. `["x86_64", "arm64"]`). Omit if all architectures are supported. |
+| `url` | `string` | Conditional | Direct download URL for `appimage` methods. |
+| `sha256` | `string` | No | Optional 64-character hex SHA-256 checksum for `appimage` downloads. |
 | `install_cmd` | `string` | Conditional | Command for shell kinds (`sh`, `bash`, `powershell`, `cmd`), or custom install override. |
 | `update_cmd` | `string` | No | Command to update the software (for shell kinds or custom updaters). |
 | `uninstall_cmd` | `string` | No | Command to uninstall the software. |
 | `priority` | `integer` | No | Optional preference weight (default `0`; higher preferred). |
 
 Supported `kind` values:
-- Linux system & universal: `pacman`, `aur`, `apt`, `dnf`, `zypper`, `apk`, `flatpak`, `snap`, `nix`
+- Linux system & universal: `pacman`, `aur`, `apt`, `dnf`, `zypper`, `apk`, `flatpak`, `snap`, `nix`, `appimage`
 - macOS: `brew`, `brew_cask`
 - Windows: `winget`, `scoop`, `choco`
 - Shell runners: `sh` (`/bin/sh -c`), `bash` (`bash -c`), `powershell` (`pwsh` / `powershell -NoProfile -Command`), `cmd` (`cmd /C`)
