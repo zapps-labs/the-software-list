@@ -931,9 +931,11 @@
       "homepage": "https://x.ai/bot",
       "tags": ["ai", "xai", "grok", "agent", "bot", "desktop"],
       "detect": [
+        {"os": "linux", "kind": "binary", "value": "grok-bot"},
         {"os": "macos", "kind": "macos_app", "value": "/Applications/Grok Bot.app"}
       ],
       "methods": [
+        {"os": "linux", "kind": "aur", "package": "grok-bot-bin"},
         {"os": "macos", "kind": "brew_cask", "package": "grok-bot"}
       ],
       "configs": []
