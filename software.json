@@ -175,6 +175,42 @@
       ]
     },
     {
+      "id": "chatgpt",
+      "name": "ChatGPT",
+      "summary": "Official OpenAI desktop app for ChatGPT and always-on Dots agents",
+      "category": "ai",
+      "homepage": "https://chatgpt.com/download",
+      "tags": ["ai", "openai", "chatgpt", "dots", "assistant", "desktop"],
+      "detect": [
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/ChatGPT.app"},
+        {"os": "windows", "kind": "binary", "value": "ChatGPT.exe"}
+      ],
+      "methods": [
+        {"os": "macos", "kind": "brew_cask", "package": "chatgpt"},
+        {"os": "windows", "kind": "winget", "package": "OpenAI.ChatGPT"}
+      ],
+      "configs": []
+    },
+    {
+      "id": "claude",
+      "name": "Claude",
+      "summary": "Official Anthropic desktop app for Claude with MCP tool integrations",
+      "category": "ai",
+      "homepage": "https://claude.ai/download",
+      "tags": ["ai", "anthropic", "claude", "mcp", "assistant", "desktop"],
+      "detect": [
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/Claude.app"},
+        {"os": "windows", "kind": "path", "value": "%LOCALAPPDATA%\\AnthropicClaude\\claude.exe"}
+      ],
+      "methods": [
+        {"os": "macos", "kind": "brew_cask", "package": "claude"},
+        {"os": "windows", "kind": "winget", "package": "Anthropic.Claude"}
+      ],
+      "configs": [
+        {"id": "mcp-config", "label": "Claude Desktop MCP config", "paths": {"macos": "~/Library/Application Support/Claude/claude_desktop_config.json", "windows": "%APPDATA%\\Claude\\claude_desktop_config.json"}}
+      ]
+    },
+    {
       "id": "claude-code",
       "name": "Claude Code",
       "summary": "Anthropic's agentic AI coding assistant that lives in your terminal",
@@ -609,6 +645,44 @@
       ]
     },
     {
+      "id": "grok-bot",
+      "name": "Grok Bot",
+      "summary": "xAI desktop workbench for managing always-on Grok Bot AI teammates",
+      "category": "ai",
+      "homepage": "https://x.ai/bot",
+      "tags": ["ai", "xai", "grok", "agent", "bot", "desktop"],
+      "detect": [
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/Grok Bot.app"}
+      ],
+      "methods": [
+        {"os": "macos", "kind": "brew_cask", "package": "grok-bot"}
+      ],
+      "configs": []
+    },
+    {
+      "id": "grok-build",
+      "name": "Grok Build",
+      "summary": "xAI's official terminal AI coding agent and TUI (grok)",
+      "category": "ai",
+      "homepage": "https://github.com/xai-org/grok-build",
+      "repository": "https://github.com/xai-org/grok-build",
+      "tags": ["ai", "xai", "grok", "coding", "agent", "cli", "tui"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "grok"},
+        {"os": "macos", "kind": "binary", "value": "grok"},
+        {"os": "windows", "kind": "binary", "value": "grok.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "aur", "package": "grok-build"},
+        {"os": "linux", "kind": "bash", "install_cmd": "curl -fsSL https://x.ai/cli/install.sh | bash"},
+        {"os": "macos", "kind": "brew_cask", "package": "grok-build"},
+        {"os": "macos", "kind": "bash", "install_cmd": "curl -fsSL https://x.ai/cli/install.sh | bash"},
+        {"os": "windows", "kind": "winget", "package": "xAI.GrokBuild"},
+        {"os": "windows", "kind": "powershell", "install_cmd": "irm https://x.ai/cli/install.ps1 | iex"}
+      ],
+      "configs": []
+    },
+    {
       "id": "helix",
       "name": "Helix",
       "summary": "Post-modern modal text editor with built-in tree-sitter and LSP support",
@@ -1038,6 +1112,7 @@
         {"os": "linux", "kind": "sh", "install_cmd": "curl -fsSL https://chatgpt.com/codex/install.sh | sh"},
         {"os": "macos", "kind": "brew_cask", "package": "codex"},
         {"os": "macos", "kind": "sh", "install_cmd": "curl -fsSL https://chatgpt.com/codex/install.sh | sh"},
+        {"os": "windows", "kind": "winget", "package": "OpenAI.Codex"},
         {"os": "windows", "kind": "powershell", "install_cmd": "irm https://chatgpt.com/codex/install.ps1 | iex"}
       ],
       "configs": [
