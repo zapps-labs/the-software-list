@@ -31,8 +31,16 @@ def format_catalog(data: dict) -> str:
         "{",
         f'  "schema_version": {compact(data["schema_version"])},',
         f'  "name": {compact(data.get("name", "the-software-list"))},',
-        '  "software": [',
     ]
+    categories = data.get("categories")
+    if isinstance(categories, dict):
+        lines.append('  "categories": {')
+        cat_items = sorted(categories.items(), key=lambda kv: kv[0])
+        for idx, (ckey, clabel) in enumerate(cat_items):
+            comma = "," if idx < len(cat_items) - 1 else ""
+            lines.append(f'    {compact(ckey)}: {compact(clabel)}{comma}')
+        lines.append("  },")
+    lines.append('  "software": [')
     software = sorted(data["software"], key=lambda x: x["name"].lower())
     for idx, entry in enumerate(software):
         comma = "," if idx < len(software) - 1 else ""

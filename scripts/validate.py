@@ -27,6 +27,17 @@ def main() -> int:
     if data.get("schema_version") != 1:
         errors.append("schema_version must be 1")
 
+    categories = data.get("categories")
+    if not isinstance(categories, dict) or not categories:
+        errors.append("categories must be a non-empty object mapping key => label")
+        categories = {}
+    else:
+        for ckey, clabel in categories.items():
+            if not isinstance(ckey, str) or not ID_RE.match(ckey):
+                errors.append(f"categories: invalid key '{ckey}' (must match {ID_RE.pattern})")
+            if not isinstance(clabel, str) or not clabel.strip():
+                errors.append(f"categories['{ckey}']: label must be a non-empty string")
+
     items = data.get("software")
     if not isinstance(items, list) or not items:
         errors.append("software must be a non-empty array")
@@ -45,6 +56,13 @@ def main() -> int:
         for req in ("name", "summary", "category"):
             if not isinstance(entry.get(req), str) or not entry[req].strip():
                 errors.append(f"{ctx}: missing or empty '{req}'")
+
+        cat = entry.get("category")
+        if isinstance(cat, str) and cat.strip():
+            if not ID_RE.match(cat):
+                errors.append(f"{ctx}: invalid category key '{cat}' (must match {ID_RE.pattern})")
+            elif categories and cat not in categories:
+                errors.append(f"{ctx}: unknown category '{cat}' (not defined in top-level categories)")
 
         for di, det in enumerate(entry.get("detect", [])):
             if det.get("os") not in VALID_OS:

@@ -1,12 +1,24 @@
 {
   "schema_version": 1,
   "name": "the-software-list",
+  "categories": {
+    "browsers": "Browsers",
+    "cli": "CLI Tools",
+    "communication": "Communication",
+    "development": "Development",
+    "graphics": "Graphics",
+    "media": "Media",
+    "productivity": "Productivity",
+    "system": "System",
+    "terminals": "Terminals",
+    "utilities": "Utilities"
+  },
   "software": [
     {
       "id": "alacritty",
       "name": "Alacritty",
       "summary": "Minimal, cross-platform OpenGL terminal emulator",
-      "category": "Terminals",
+      "category": "terminals",
       "homepage": "https://alacritty.org",
       "tags": ["terminal", "rust", "opengl"],
       "detect": [
@@ -29,7 +41,7 @@
       "id": "bat",
       "name": "bat",
       "summary": "A cat clone with syntax highlighting and Git integration",
-      "category": "CLI Tools",
+      "category": "cli",
       "homepage": "https://github.com/sharkdp/bat",
       "tags": ["cat", "syntax", "cli", "rust"],
       "detect": [
@@ -52,7 +64,7 @@
       "id": "blender",
       "name": "Blender",
       "summary": "Open-source 3D creation suite for modeling, animation, and rendering",
-      "category": "Graphics",
+      "category": "graphics",
       "homepage": "https://www.blender.org",
       "tags": ["3d", "modeling", "render", "animation"],
       "detect": [
@@ -77,7 +89,7 @@
       "id": "brave",
       "name": "Brave Browser",
       "summary": "Chromium-based browser with built-in ad and tracker blocking",
-      "category": "Browsers",
+      "category": "browsers",
       "homepage": "https://brave.com",
       "tags": ["browser", "web", "chromium", "privacy"],
       "detect": [
@@ -100,7 +112,7 @@
       "id": "btop",
       "name": "btop",
       "summary": "Resource monitor for CPU, memory, disks, network, and processes",
-      "category": "CLI Tools",
+      "category": "cli",
       "homepage": "https://github.com/aristocratos/btop",
       "tags": ["monitor", "system", "tui", "htop"],
       "detect": [
@@ -121,7 +133,7 @@
       "id": "discord",
       "name": "Discord",
       "summary": "Voice, video, and text chat for communities and teams",
-      "category": "Communication",
+      "category": "communication",
       "homepage": "https://discord.com",
       "tags": ["chat", "voice", "messaging"],
       "detect": [
@@ -142,7 +154,7 @@
       "id": "docker",
       "name": "Docker",
       "summary": "Container runtime and CLI for building and running apps",
-      "category": "Development",
+      "category": "development",
       "homepage": "https://www.docker.com",
       "tags": ["containers", "devops", "cli"],
       "detect": [
@@ -162,7 +174,7 @@
       "id": "firefox",
       "name": "Firefox",
       "summary": "Fast, privacy-focused open-source web browser",
-      "category": "Browsers",
+      "category": "browsers",
       "homepage": "https://www.mozilla.org/firefox/",
       "tags": ["browser", "web", "mozilla"],
       "detect": [
@@ -187,7 +199,7 @@
       "id": "fzf",
       "name": "fzf",
       "summary": "Command-line fuzzy finder for files, history, and git",
-      "category": "CLI Tools",
+      "category": "cli",
       "homepage": "https://github.com/junegunn/fzf",
       "tags": ["fuzzy", "search", "cli", "shell"],
       "detect": [
@@ -208,7 +220,7 @@
       "id": "ghostty",
       "name": "Ghostty",
       "summary": "Fast, native, feature-rich GPU-accelerated terminal emulator",
-      "category": "Terminals",
+      "category": "terminals",
       "homepage": "https://ghostty.org",
       "tags": ["terminal", "gpu", "emulator"],
       "detect": [
@@ -227,7 +239,7 @@
       "id": "gimp",
       "name": "GIMP",
       "summary": "GNU Image Manipulation Program for photo editing and graphics",
-      "category": "Graphics",
+      "category": "graphics",
       "homepage": "https://www.gimp.org",
       "tags": ["image", "photo", "graphics", "editor"],
       "detect": [
@@ -252,7 +264,7 @@
       "id": "git",
       "name": "Git",
       "summary": "Distributed version control system",
-      "category": "Development",
+      "category": "development",
       "homepage": "https://git-scm.com",
       "tags": ["vcs", "scm", "cli", "dev"],
       "detect": [
@@ -275,7 +287,7 @@
       "id": "jolt",
       "name": "jolt",
       "summary": "Fast HTTP/1.1 & HTTP/2 load tester with a live terminal UI",
-      "category": "CLI Tools",
+      "category": "cli",
       "homepage": "https://github.com/ctxcode/jolt",
       "repository": "https://github.com/ctxcode/jolt",
       "tags": ["http", "benchmark", "load-test", "cli", "valk"],
@@ -296,7 +308,7 @@
       "id": "keepassxc",
       "name": "KeePassXC",
       "summary": "Cross-platform offline password manager",
-      "category": "Productivity",
+      "category": "productivity",
       "homepage": "https://keepassxc.org",
       "tags": ["passwords", "security", "vault"],
       "detect": [
@@ -321,7 +333,7 @@
       "id": "kitty",
       "name": "Kitty",
       "summary": "GPU-based terminal emulator with tabs, splits, and ligatures",
-      "category": "Terminals",
+      "category": "terminals",
       "homepage": "https://sw.kovidgoyal.net/kitty/",
       "tags": ["terminal", "gpu", "emulator"],
       "detect": [
@@ -342,7 +354,7 @@
       "id": "lazygit",
       "name": "Lazygit",
       "summary": "Simple terminal UI for Git commands",
-      "category": "Development",
+      "category": "development",
       "homepage": "https://github.com/jesseduffield/lazygit",
       "tags": ["git", "tui", "terminal"],
       "detect": [
@@ -365,7 +377,7 @@
       "id": "mpv",
       "name": "mpv",
       "summary": "Minimalist, scriptable command-line video player",
-      "category": "Media",
+      "category": "media",
       "homepage": "https://mpv.io",
       "tags": ["video", "player", "media", "minimal"],
       "detect": [
@@ -389,7 +401,7 @@
       "id": "neovim",
       "name": "Neovim",
       "summary": "Hyperextensible Vim-based text editor configured in Lua",
-      "category": "Development",
+      "category": "development",
       "homepage": "https://neovim.io",
       "tags": ["editor", "vim", "terminal", "lua"],
       "detect": [
@@ -413,7 +425,7 @@
       "id": "obs-studio",
       "name": "OBS Studio",
       "summary": "Open-source video recording and live streaming studio",
-      "category": "Media",
+      "category": "media",
       "homepage": "https://obsproject.com",
       "tags": ["streaming", "recording", "video"],
       "detect": [
@@ -438,7 +450,7 @@
       "id": "obsidian",
       "name": "Obsidian",
       "summary": "Local-first Markdown knowledge base and note-taking app",
-      "category": "Productivity",
+      "category": "productivity",
       "homepage": "https://obsidian.md",
       "tags": ["notes", "markdown", "pkm", "wiki"],
       "detect": [
@@ -461,7 +473,7 @@
       "id": "ripgrep",
       "name": "ripgrep",
       "summary": "Ultra-fast recursive line search tool that respects .gitignore",
-      "category": "CLI Tools",
+      "category": "cli",
       "homepage": "https://github.com/BurntSushi/ripgrep",
       "tags": ["search", "grep", "cli", "rust"],
       "detect": [
@@ -482,7 +494,7 @@
       "id": "starship",
       "name": "Starship",
       "summary": "Minimal, blazing-fast customizable prompt for any shell",
-      "category": "CLI Tools",
+      "category": "cli",
       "homepage": "https://starship.rs",
       "tags": ["prompt", "shell", "rust", "cli"],
       "detect": [
@@ -506,7 +518,7 @@
       "id": "tmux",
       "name": "tmux",
       "summary": "Terminal multiplexer for persistent sessions, panes, and windows",
-      "category": "Terminals",
+      "category": "terminals",
       "homepage": "https://github.com/tmux/tmux",
       "tags": ["terminal", "multiplexer", "cli"],
       "detect": [
@@ -527,7 +539,7 @@
       "id": "vscode",
       "name": "Visual Studio Code",
       "summary": "Extensible source-code editor with debugging, Git, and extensions",
-      "category": "Development",
+      "category": "development",
       "homepage": "https://code.visualstudio.com",
       "tags": ["editor", "ide", "code", "microsoft"],
       "detect": [
@@ -552,7 +564,7 @@
       "id": "vlc",
       "name": "VLC Media Player",
       "summary": "Open-source cross-platform multimedia player for almost any format",
-      "category": "Media",
+      "category": "media",
       "homepage": "https://www.videolan.org/vlc/",
       "tags": ["video", "audio", "player", "media"],
       "detect": [
@@ -577,7 +589,7 @@
       "id": "vman",
       "name": "vman",
       "summary": "Valk package manager and compiler version manager",
-      "category": "Development",
+      "category": "development",
       "homepage": "https://valk-lang.dev",
       "tags": ["valk", "package-manager", "compiler", "cli"],
       "detect": [
@@ -598,7 +610,7 @@
       "id": "zed",
       "name": "Zed",
       "summary": "High-performance, GPU-accelerated code editor written in Rust",
-      "category": "Development",
+      "category": "development",
       "homepage": "https://zed.dev",
       "tags": ["editor", "ide", "rust", "fast"],
       "detect": [
@@ -621,7 +633,7 @@
       "id": "zsh",
       "name": "Zsh",
       "summary": "Powerful interactive Unix shell with completions and themes",
-      "category": "Terminals",
+      "category": "terminals",
       "homepage": "https://www.zsh.org",
       "tags": ["shell", "terminal", "cli"],
       "detect": [

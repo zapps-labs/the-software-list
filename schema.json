@@ -3,10 +3,16 @@
   "$id": "https://raw.githubusercontent.com/zapps-labs/the-software-list/main/schema.json",
   "title": "The Software List Catalog",
   "type": "object",
-  "required": ["schema_version", "software"],
+  "required": ["schema_version", "categories", "software"],
   "properties": {
     "schema_version": { "type": "integer", "const": 1 },
     "name": { "type": "string" },
+    "categories": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": { "pattern": "^[a-z0-9][a-z0-9-]*$" },
+      "additionalProperties": { "type": "string", "minLength": 1 }
+    },
     "software": {
       "type": "array",
       "items": {
@@ -16,7 +22,7 @@
           "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
           "name": { "type": "string", "minLength": 1 },
           "summary": { "type": "string", "minLength": 1 },
-          "category": { "type": "string", "minLength": 1 },
+          "category": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
           "homepage": { "type": "string" },
           "repository": { "type": "string" },
           "license": { "type": "string" },

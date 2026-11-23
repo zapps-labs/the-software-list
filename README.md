@@ -67,7 +67,7 @@ You don't need direct push access to this repository — contributions are submi
   "id": "my-app",
   "name": "My App",
   "summary": "Short one-line description of what the software does.",
-  "category": "Utilities",
+  "category": "utilities",
   "homepage": "https://example.com",
   "license": "MIT",
   "tags": ["utility"],
