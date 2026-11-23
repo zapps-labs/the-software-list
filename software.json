@@ -16,6 +16,28 @@
   },
   "software": [
     {
+      "id": "dotnet",
+      "name": ".NET SDK",
+      "summary": "Cross-platform SDK and compiler toolchain for C#, F#, and .NET applications",
+      "category": "development",
+      "homepage": "https://dotnet.microsoft.com",
+      "repository": "https://github.com/dotnet/sdk",
+      "tags": ["csharp", "fsharp", "dotnet", "compiler", "sdk", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "dotnet"},
+        {"os": "macos", "kind": "binary", "value": "dotnet"},
+        {"os": "windows", "kind": "binary", "value": "dotnet.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "dotnet-sdk"},
+        {"os": "linux", "kind": "apt", "package": "dotnet-sdk-8.0"},
+        {"os": "linux", "kind": "dnf", "package": "dotnet-sdk-8.0"},
+        {"os": "macos", "kind": "brew_cask", "package": "dotnet-sdk"},
+        {"os": "windows", "kind": "winget", "package": "Microsoft.DotNet.SDK.8"}
+      ],
+      "configs": []
+    },
+    {
       "id": "aider",
       "name": "Aider",
       "summary": "AI pair programming in your terminal with deep Git integration",
@@ -60,6 +82,27 @@
       "configs": [
         {"id": "config", "label": "Alacritty config", "paths": {"linux": "~/.config/alacritty", "macos": "~/.config/alacritty", "windows": "%APPDATA%\\alacritty"}}
       ]
+    },
+    {
+      "id": "maven",
+      "name": "Apache Maven",
+      "summary": "Build automation and dependency management tool for Java projects",
+      "category": "development",
+      "homepage": "https://maven.apache.org",
+      "tags": ["build", "java", "jvm", "dependencies", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "mvn"},
+        {"os": "macos", "kind": "binary", "value": "mvn"},
+        {"os": "windows", "kind": "binary", "value": "mvn.cmd"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "maven"},
+        {"os": "linux", "kind": "apt", "package": "maven"},
+        {"os": "linux", "kind": "dnf", "package": "maven"},
+        {"os": "macos", "kind": "brew", "package": "maven"}
+      ],
+      "configs": [],
+      "depends": ["openjdk"]
     },
     {
       "id": "bat",
@@ -154,6 +197,28 @@
       ]
     },
     {
+      "id": "bruno",
+      "name": "Bruno",
+      "summary": "Fast, offline, Git-friendly open-source API client",
+      "category": "development",
+      "homepage": "https://www.usebruno.com",
+      "repository": "https://github.com/usebruno/bruno",
+      "tags": ["api", "http", "rest", "graphql", "postman", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "bruno"},
+        {"os": "linux", "kind": "flatpak", "value": "com.usebruno.Bruno"},
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/Bruno.app"},
+        {"os": "windows", "kind": "binary", "value": "Bruno.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "aur", "package": "bruno-bin"},
+        {"os": "linux", "kind": "flatpak", "package": "com.usebruno.Bruno", "remote": "flathub"},
+        {"os": "macos", "kind": "brew_cask", "package": "bruno"},
+        {"os": "windows", "kind": "winget", "package": "Bruno.Bruno"}
+      ],
+      "configs": []
+    },
+    {
       "id": "btop",
       "name": "btop",
       "summary": "Resource monitor for CPU, memory, disks, network, and processes",
@@ -175,6 +240,33 @@
       ]
     },
     {
+      "id": "bun",
+      "name": "Bun",
+      "summary": "Fast all-in-one JavaScript and TypeScript runtime, bundler, and package manager",
+      "category": "development",
+      "homepage": "https://bun.sh",
+      "repository": "https://github.com/oven-sh/bun",
+      "tags": ["javascript", "typescript", "runtime", "bundler", "package-manager", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "bun"},
+        {"os": "linux", "kind": "path", "value": "~/.bun/bin/bun"},
+        {"os": "macos", "kind": "binary", "value": "bun"},
+        {"os": "macos", "kind": "path", "value": "~/.bun/bin/bun"},
+        {"os": "windows", "kind": "binary", "value": "bun.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "aur", "package": "bun-bin"},
+        {"os": "linux", "kind": "bash", "install_cmd": "curl -fsSL https://bun.sh/install | bash"},
+        {"os": "macos", "kind": "brew", "package": "oven-sh/bun/bun"},
+        {"os": "macos", "kind": "bash", "install_cmd": "curl -fsSL https://bun.sh/install | bash"},
+        {"os": "windows", "kind": "winget", "package": "Oven-sh.Bun"},
+        {"os": "windows", "kind": "powershell", "install_cmd": "irm bun.sh/install.ps1 | iex"}
+      ],
+      "configs": [
+        {"id": "bunfig", "label": "Bun config (~/.bunfig.toml)", "paths": {"linux": "~/.bunfig.toml", "macos": "~/.bunfig.toml", "windows": "%USERPROFILE%\\.bunfig.toml"}}
+      ]
+    },
+    {
       "id": "chatgpt",
       "name": "ChatGPT",
       "summary": "Official OpenAI desktop app for ChatGPT and always-on Dots agents",
@@ -188,6 +280,28 @@
       "methods": [
         {"os": "macos", "kind": "brew_cask", "package": "chatgpt"},
         {"os": "windows", "kind": "winget", "package": "OpenAI.ChatGPT"}
+      ],
+      "configs": []
+    },
+    {
+      "id": "clang",
+      "name": "Clang / LLVM",
+      "summary": "LLVM C, C++, and Objective-C compiler toolchain",
+      "category": "development",
+      "homepage": "https://clang.llvm.org",
+      "repository": "https://github.com/llvm/llvm-project",
+      "tags": ["c", "cpp", "llvm", "compiler", "toolchain", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "clang"},
+        {"os": "macos", "kind": "binary", "value": "clang"},
+        {"os": "windows", "kind": "binary", "value": "clang.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "clang"},
+        {"os": "linux", "kind": "apt", "package": "clang"},
+        {"os": "linux", "kind": "dnf", "package": "clang"},
+        {"os": "macos", "kind": "brew", "package": "llvm"},
+        {"os": "windows", "kind": "winget", "package": "LLVM.LLVM"}
       ],
       "configs": []
     },
@@ -237,6 +351,49 @@
       ]
     },
     {
+      "id": "cmake",
+      "name": "CMake",
+      "summary": "Cross-platform build system generator for C, C++, and native projects",
+      "category": "development",
+      "homepage": "https://cmake.org",
+      "tags": ["build", "c", "cpp", "toolchain", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "cmake"},
+        {"os": "macos", "kind": "binary", "value": "cmake"},
+        {"os": "windows", "kind": "binary", "value": "cmake.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "cmake"},
+        {"os": "linux", "kind": "apt", "package": "cmake"},
+        {"os": "linux", "kind": "dnf", "package": "cmake"},
+        {"os": "macos", "kind": "brew", "package": "cmake"},
+        {"os": "windows", "kind": "winget", "package": "Kitware.CMake"}
+      ],
+      "configs": []
+    },
+    {
+      "id": "composer",
+      "name": "Composer",
+      "summary": "Dependency and package manager for PHP",
+      "category": "development",
+      "homepage": "https://getcomposer.org",
+      "repository": "https://github.com/composer/composer",
+      "tags": ["php", "package-manager", "dependencies", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "composer"},
+        {"os": "macos", "kind": "binary", "value": "composer"},
+        {"os": "windows", "kind": "binary", "value": "composer.bat"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "composer"},
+        {"os": "linux", "kind": "apt", "package": "composer"},
+        {"os": "linux", "kind": "dnf", "package": "composer"},
+        {"os": "macos", "kind": "brew", "package": "composer"}
+      ],
+      "configs": [],
+      "depends": ["php"]
+    },
+    {
       "id": "cursor",
       "name": "Cursor",
       "summary": "AI-first code editor built on VS Code with agentic editing and completions",
@@ -257,6 +414,31 @@
         {"id": "user-settings", "label": "Cursor editor settings", "paths": {"linux": "~/.config/Cursor/User", "macos": "~/Library/Application Support/Cursor/User", "windows": "%APPDATA%\\Cursor\\User"}},
         {"id": "cursor-dir", "label": "Cursor AI & MCP config (~/.cursor)", "paths": {"linux": "~/.cursor", "macos": "~/.cursor", "windows": "%USERPROFILE%\\.cursor"}}
       ]
+    },
+    {
+      "id": "deno",
+      "name": "Deno",
+      "summary": "Secure modern runtime for JavaScript and TypeScript with built-in tooling",
+      "category": "development",
+      "homepage": "https://deno.com",
+      "repository": "https://github.com/denoland/deno",
+      "tags": ["javascript", "typescript", "runtime", "rust", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "deno"},
+        {"os": "linux", "kind": "path", "value": "~/.deno/bin/deno"},
+        {"os": "macos", "kind": "binary", "value": "deno"},
+        {"os": "macos", "kind": "path", "value": "~/.deno/bin/deno"},
+        {"os": "windows", "kind": "binary", "value": "deno.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "deno"},
+        {"os": "linux", "kind": "sh", "install_cmd": "curl -fsSL https://deno.land/install.sh | sh"},
+        {"os": "macos", "kind": "brew", "package": "deno"},
+        {"os": "macos", "kind": "sh", "install_cmd": "curl -fsSL https://deno.land/install.sh | sh"},
+        {"os": "windows", "kind": "winget", "package": "DenoLand.Deno"},
+        {"os": "windows", "kind": "powershell", "install_cmd": "irm https://deno.land/install.ps1 | iex"}
+      ],
+      "configs": []
     },
     {
       "id": "discord",
@@ -296,6 +478,28 @@
         {"os": "linux", "kind": "apt", "package": "docker.io"},
         {"os": "linux", "kind": "dnf", "package": "docker"},
         {"os": "macos", "kind": "brew", "package": "docker"}
+      ],
+      "configs": []
+    },
+    {
+      "id": "elixir",
+      "name": "Elixir",
+      "summary": "Dynamic, functional programming language built on the Erlang VM (BEAM)",
+      "category": "development",
+      "homepage": "https://elixir-lang.org",
+      "repository": "https://github.com/elixir-lang/elixir",
+      "tags": ["elixir", "erlang", "beam", "functional", "language", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "elixir"},
+        {"os": "macos", "kind": "binary", "value": "elixir"},
+        {"os": "windows", "kind": "binary", "value": "elixir.bat"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "elixir"},
+        {"os": "linux", "kind": "apt", "package": "elixir"},
+        {"os": "linux", "kind": "dnf", "package": "elixir"},
+        {"os": "macos", "kind": "brew", "package": "elixir"},
+        {"os": "windows", "kind": "winget", "package": "Elixir.Elixir"}
       ],
       "configs": []
     },
@@ -484,6 +688,46 @@
       "configs": []
     },
     {
+      "id": "gcc",
+      "name": "GCC",
+      "summary": "GNU Compiler Collection for C, C++, and systems programming",
+      "category": "development",
+      "homepage": "https://gcc.gnu.org",
+      "tags": ["c", "cpp", "gnu", "compiler", "toolchain", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "gcc"},
+        {"os": "macos", "kind": "binary", "value": "gcc"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "gcc"},
+        {"os": "linux", "kind": "apt", "package": "gcc"},
+        {"os": "linux", "kind": "dnf", "package": "gcc"},
+        {"os": "macos", "kind": "brew", "package": "gcc"}
+      ],
+      "configs": []
+    },
+    {
+      "id": "gdb",
+      "name": "GDB",
+      "summary": "GNU Debugger for inspecting C, C++, Rust, Go, and native binaries",
+      "category": "development",
+      "homepage": "https://www.sourceware.org/gdb/",
+      "tags": ["debugger", "gnu", "c", "cpp", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "gdb"},
+        {"os": "macos", "kind": "binary", "value": "gdb"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "gdb"},
+        {"os": "linux", "kind": "apt", "package": "gdb"},
+        {"os": "linux", "kind": "dnf", "package": "gdb"},
+        {"os": "macos", "kind": "brew", "package": "gdb"}
+      ],
+      "configs": [
+        {"id": "gdbinit", "label": "GDB config (~/.gdbinit)", "paths": {"linux": "~/.gdbinit", "macos": "~/.gdbinit"}}
+      ]
+    },
+    {
       "id": "gemini-cli",
       "name": "Gemini CLI",
       "summary": "Open-source terminal AI agent from Google powered by Gemini",
@@ -601,6 +845,45 @@
       "depends": ["git"]
     },
     {
+      "id": "gleam",
+      "name": "Gleam",
+      "summary": "Friendly, type-safe functional language targeting Erlang and JavaScript",
+      "category": "development",
+      "homepage": "https://gleam.run",
+      "repository": "https://github.com/gleam-lang/gleam",
+      "tags": ["gleam", "functional", "beam", "compiler", "language", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "gleam"},
+        {"os": "macos", "kind": "binary", "value": "gleam"},
+        {"os": "windows", "kind": "binary", "value": "gleam.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "gleam"},
+        {"os": "macos", "kind": "brew", "package": "gleam"},
+        {"os": "windows", "kind": "winget", "package": "Gleam.Gleam"}
+      ],
+      "configs": []
+    },
+    {
+      "id": "make",
+      "name": "GNU Make",
+      "summary": "Classic build automation tool for compiling software from Makefiles",
+      "category": "development",
+      "homepage": "https://www.gnu.org/software/make/",
+      "tags": ["build", "makefile", "gnu", "toolchain", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "make"},
+        {"os": "macos", "kind": "binary", "value": "make"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "make"},
+        {"os": "linux", "kind": "apt", "package": "make"},
+        {"os": "linux", "kind": "dnf", "package": "make"},
+        {"os": "macos", "kind": "brew", "package": "make"}
+      ],
+      "configs": []
+    },
+    {
       "id": "go",
       "name": "Go",
       "summary": "Fast, statically typed compiled programming language and toolchain",
@@ -643,6 +926,27 @@
       "configs": [
         {"id": "config", "label": "Goose config", "paths": {"linux": "~/.config/goose", "macos": "~/.config/goose"}}
       ]
+    },
+    {
+      "id": "gradle",
+      "name": "Gradle",
+      "summary": "Flexible build automation tool for Java, Kotlin, Android, and JVM projects",
+      "category": "development",
+      "homepage": "https://gradle.org",
+      "repository": "https://github.com/gradle/gradle",
+      "tags": ["build", "java", "kotlin", "jvm", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "gradle"},
+        {"os": "macos", "kind": "binary", "value": "gradle"},
+        {"os": "windows", "kind": "binary", "value": "gradle.bat"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "gradle"},
+        {"os": "linux", "kind": "apt", "package": "gradle"},
+        {"os": "macos", "kind": "brew", "package": "gradle"}
+      ],
+      "configs": [],
+      "depends": ["openjdk"]
     },
     {
       "id": "grok-bot",
@@ -775,6 +1079,28 @@
       "configs": []
     },
     {
+      "id": "just",
+      "name": "just",
+      "summary": "Handy command runner and modern task runner alternative to Make",
+      "category": "development",
+      "homepage": "https://just.systems",
+      "repository": "https://github.com/casey/just",
+      "tags": ["build", "task-runner", "make", "rust", "cli", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "just"},
+        {"os": "macos", "kind": "binary", "value": "just"},
+        {"os": "windows", "kind": "binary", "value": "just.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "just"},
+        {"os": "linux", "kind": "apt", "package": "just"},
+        {"os": "linux", "kind": "dnf", "package": "just"},
+        {"os": "macos", "kind": "brew", "package": "just"},
+        {"os": "windows", "kind": "winget", "package": "Casey.Just"}
+      ],
+      "configs": []
+    },
+    {
       "id": "keepassxc",
       "name": "KeePassXC",
       "summary": "Cross-platform offline password manager",
@@ -821,6 +1147,25 @@
       ]
     },
     {
+      "id": "kotlin",
+      "name": "Kotlin",
+      "summary": "Concise, statically typed programming language for JVM and multiplatform",
+      "category": "development",
+      "homepage": "https://kotlinlang.org",
+      "repository": "https://github.com/JetBrains/kotlin",
+      "tags": ["kotlin", "jvm", "compiler", "language", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "kotlinc"},
+        {"os": "macos", "kind": "binary", "value": "kotlinc"},
+        {"os": "windows", "kind": "binary", "value": "kotlinc.bat"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "kotlin"},
+        {"os": "macos", "kind": "brew", "package": "kotlin"}
+      ],
+      "configs": []
+    },
+    {
       "id": "krita",
       "name": "Krita",
       "summary": "Open-source digital painting and illustration studio",
@@ -844,6 +1189,25 @@
       "configs": [
         {"id": "config", "label": "Krita brushes & resources", "paths": {"linux": "~/.local/share/krita", "macos": "~/Library/Application Support/krita"}}
       ]
+    },
+    {
+      "id": "kubectl",
+      "name": "kubectl",
+      "summary": "Official command-line tool for managing Kubernetes clusters",
+      "category": "development",
+      "homepage": "https://kubernetes.io/docs/reference/kubectl/",
+      "tags": ["kubernetes", "k8s", "devops", "cloud", "cli"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "kubectl"},
+        {"os": "macos", "kind": "binary", "value": "kubectl"},
+        {"os": "windows", "kind": "binary", "value": "kubectl.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "kubectl"},
+        {"os": "macos", "kind": "brew", "package": "kubectl"},
+        {"os": "windows", "kind": "winget", "package": "Kubernetes.kubectl"}
+      ],
+      "configs": []
     },
     {
       "id": "lazygit",
@@ -915,6 +1279,29 @@
       "configs": []
     },
     {
+      "id": "lldb",
+      "name": "LLDB",
+      "summary": "Next-generation high-performance debugger from the LLVM project",
+      "category": "development",
+      "homepage": "https://lldb.llvm.org",
+      "tags": ["debugger", "llvm", "c", "cpp", "rust", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "lldb"},
+        {"os": "macos", "kind": "binary", "value": "lldb"},
+        {"os": "windows", "kind": "binary", "value": "lldb.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "lldb"},
+        {"os": "linux", "kind": "apt", "package": "lldb"},
+        {"os": "linux", "kind": "dnf", "package": "lldb"},
+        {"os": "macos", "kind": "brew", "package": "llvm"},
+        {"os": "windows", "kind": "winget", "package": "LLVM.LLVM"}
+      ],
+      "configs": [
+        {"id": "lldbinit", "label": "LLDB config (~/.lldbinit)", "paths": {"linux": "~/.lldbinit", "macos": "~/.lldbinit"}}
+      ]
+    },
+    {
       "id": "lm-studio",
       "name": "LM Studio",
       "summary": "Desktop app to discover, download, and run local LLMs offline",
@@ -954,6 +1341,52 @@
         {"os": "windows", "kind": "winget", "package": "LocalSend.LocalSend"}
       ],
       "configs": []
+    },
+    {
+      "id": "lua",
+      "name": "Lua",
+      "summary": "Lightweight, fast, embeddable scripting language",
+      "category": "development",
+      "homepage": "https://www.lua.org",
+      "tags": ["lua", "scripting", "language", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "lua"},
+        {"os": "macos", "kind": "binary", "value": "lua"},
+        {"os": "windows", "kind": "binary", "value": "lua.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "lua"},
+        {"os": "linux", "kind": "apt", "package": "lua5.4"},
+        {"os": "linux", "kind": "dnf", "package": "lua"},
+        {"os": "macos", "kind": "brew", "package": "lua"},
+        {"os": "windows", "kind": "winget", "package": "DEVCOM.Lua"}
+      ],
+      "configs": []
+    },
+    {
+      "id": "mise",
+      "name": "mise",
+      "summary": "Polyglot dev tool version manager, env loader, and task runner",
+      "category": "development",
+      "homepage": "https://mise.jdx.dev",
+      "repository": "https://github.com/jdx/mise",
+      "tags": ["version-manager", "asdf", "nvm", "pyenv", "rust", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "mise"},
+        {"os": "linux", "kind": "path", "value": "~/.local/bin/mise"},
+        {"os": "macos", "kind": "binary", "value": "mise"},
+        {"os": "windows", "kind": "binary", "value": "mise.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "mise"},
+        {"os": "linux", "kind": "sh", "install_cmd": "curl https://mise.run | sh"},
+        {"os": "macos", "kind": "brew", "package": "mise"},
+        {"os": "macos", "kind": "sh", "install_cmd": "curl https://mise.run | sh"},
+        {"os": "windows", "kind": "winget", "package": "jdx.mise"}
+      ],
+      "configs": [
+        {"id": "config", "label": "mise config", "paths": {"linux": "~/.config/mise", "macos": "~/.config/mise", "windows": "%APPDATA%\\mise"}}
+      ]
     },
     {
       "id": "mpv",
@@ -1002,6 +1435,49 @@
       "configs": [
         {"id": "config", "label": "Neovim config (~/.config/nvim)", "paths": {"linux": "~/.config/nvim", "macos": "~/.config/nvim", "windows": "%LOCALAPPDATA%\\nvim"}}
       ]
+    },
+    {
+      "id": "nim",
+      "name": "Nim",
+      "summary": "Statically typed compiled systems language with expressive Python-like syntax",
+      "category": "development",
+      "homepage": "https://nim-lang.org",
+      "repository": "https://github.com/nim-lang/Nim",
+      "tags": ["nim", "compiler", "systems", "language", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "nim"},
+        {"os": "macos", "kind": "binary", "value": "nim"},
+        {"os": "windows", "kind": "binary", "value": "nim.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "nim"},
+        {"os": "linux", "kind": "apt", "package": "nim"},
+        {"os": "linux", "kind": "dnf", "package": "nim"},
+        {"os": "macos", "kind": "brew", "package": "nim"}
+      ],
+      "configs": []
+    },
+    {
+      "id": "ninja",
+      "name": "Ninja",
+      "summary": "Small, ultra-fast build system designed to be driven by CMake or Meson",
+      "category": "development",
+      "homepage": "https://ninja-build.org",
+      "repository": "https://github.com/ninja-build/ninja",
+      "tags": ["build", "c", "cpp", "fast", "toolchain", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "ninja"},
+        {"os": "macos", "kind": "binary", "value": "ninja"},
+        {"os": "windows", "kind": "binary", "value": "ninja.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "ninja"},
+        {"os": "linux", "kind": "apt", "package": "ninja-build"},
+        {"os": "linux", "kind": "dnf", "package": "ninja-build"},
+        {"os": "macos", "kind": "brew", "package": "ninja"},
+        {"os": "windows", "kind": "winget", "package": "Ninja-build.Ninja"}
+      ],
+      "configs": []
     },
     {
       "id": "nodejs",
@@ -1071,6 +1547,26 @@
       "configs": [
         {"id": "config", "label": "Obsidian app config", "paths": {"linux": "~/.config/obsidian", "macos": "~/Library/Application Support/obsidian", "windows": "%APPDATA%\\obsidian"}}
       ]
+    },
+    {
+      "id": "odin",
+      "name": "Odin",
+      "summary": "Data-oriented systems programming language built for performance and simplicity",
+      "category": "development",
+      "homepage": "https://odin-lang.org",
+      "repository": "https://github.com/odin-lang/Odin",
+      "tags": ["odin", "compiler", "systems", "gamedev", "language", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "odin"},
+        {"os": "macos", "kind": "binary", "value": "odin"},
+        {"os": "windows", "kind": "binary", "value": "odin.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "odin"},
+        {"os": "macos", "kind": "brew", "package": "odin"},
+        {"os": "windows", "kind": "winget", "package": "odin-lang.Odin"}
+      ],
+      "configs": []
     },
     {
       "id": "ollama",
@@ -1146,6 +1642,133 @@
       ]
     },
     {
+      "id": "openjdk",
+      "name": "OpenJDK",
+      "summary": "Open-source Java Development Kit and JVM compiler toolchain",
+      "category": "development",
+      "homepage": "https://openjdk.org",
+      "tags": ["java", "jdk", "jvm", "compiler", "language", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "javac"},
+        {"os": "macos", "kind": "binary", "value": "javac"},
+        {"os": "windows", "kind": "binary", "value": "javac.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "jdk-openjdk"},
+        {"os": "linux", "kind": "apt", "package": "default-jdk"},
+        {"os": "linux", "kind": "dnf", "package": "java-21-openjdk-devel"},
+        {"os": "macos", "kind": "brew", "package": "openjdk"},
+        {"os": "windows", "kind": "winget", "package": "Microsoft.OpenJDK.21"}
+      ],
+      "configs": []
+    },
+    {
+      "id": "php",
+      "name": "PHP",
+      "summary": "General-purpose scripting language widely used for web development",
+      "category": "development",
+      "homepage": "https://www.php.net",
+      "tags": ["php", "web", "backend", "language", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "php"},
+        {"os": "macos", "kind": "binary", "value": "php"},
+        {"os": "windows", "kind": "binary", "value": "php.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "php"},
+        {"os": "linux", "kind": "apt", "package": "php"},
+        {"os": "linux", "kind": "dnf", "package": "php"},
+        {"os": "macos", "kind": "brew", "package": "php"},
+        {"os": "windows", "kind": "winget", "package": "PHP.PHP.8.4"}
+      ],
+      "configs": []
+    },
+    {
+      "id": "pnpm",
+      "name": "pnpm",
+      "summary": "Fast, disk-space-efficient package manager for Node.js",
+      "category": "development",
+      "homepage": "https://pnpm.io",
+      "repository": "https://github.com/pnpm/pnpm",
+      "tags": ["javascript", "nodejs", "package-manager", "npm", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "pnpm"},
+        {"os": "macos", "kind": "binary", "value": "pnpm"},
+        {"os": "windows", "kind": "binary", "value": "pnpm.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "pnpm"},
+        {"os": "linux", "kind": "sh", "install_cmd": "curl -fsSL https://get.pnpm.io/install.sh | sh -"},
+        {"os": "macos", "kind": "brew", "package": "pnpm"},
+        {"os": "windows", "kind": "winget", "package": "pnpm.pnpm"}
+      ],
+      "configs": []
+    },
+    {
+      "id": "podman",
+      "name": "Podman",
+      "summary": "Daemonless, rootless container engine compatible with Docker",
+      "category": "development",
+      "homepage": "https://podman.io",
+      "repository": "https://github.com/containers/podman",
+      "tags": ["containers", "docker", "devops", "oci", "cli"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "podman"},
+        {"os": "macos", "kind": "binary", "value": "podman"},
+        {"os": "windows", "kind": "binary", "value": "podman.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "podman"},
+        {"os": "linux", "kind": "apt", "package": "podman"},
+        {"os": "linux", "kind": "dnf", "package": "podman"},
+        {"os": "macos", "kind": "brew", "package": "podman"},
+        {"os": "windows", "kind": "winget", "package": "RedHat.Podman"}
+      ],
+      "configs": []
+    },
+    {
+      "id": "postgresql",
+      "name": "PostgreSQL",
+      "summary": "Advanced open-source relational database server and psql client",
+      "category": "development",
+      "homepage": "https://www.postgresql.org",
+      "tags": ["database", "sql", "postgres", "backend", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "psql"},
+        {"os": "macos", "kind": "binary", "value": "psql"},
+        {"os": "windows", "kind": "binary", "value": "psql.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "postgresql"},
+        {"os": "linux", "kind": "apt", "package": "postgresql"},
+        {"os": "linux", "kind": "dnf", "package": "postgresql-server"},
+        {"os": "macos", "kind": "brew", "package": "postgresql@16"},
+        {"os": "windows", "kind": "winget", "package": "PostgreSQL.PostgreSQL"}
+      ],
+      "configs": []
+    },
+    {
+      "id": "python",
+      "name": "Python",
+      "summary": "Versatile high-level programming language for scripting, web, and AI",
+      "category": "development",
+      "homepage": "https://www.python.org",
+      "tags": ["python", "scripting", "ai", "language", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "python3"},
+        {"os": "macos", "kind": "binary", "value": "python3"},
+        {"os": "windows", "kind": "binary", "value": "python.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "python"},
+        {"os": "linux", "kind": "apt", "package": "python3"},
+        {"os": "linux", "kind": "dnf", "package": "python3"},
+        {"os": "macos", "kind": "brew", "package": "python"},
+        {"os": "windows", "kind": "winget", "package": "Python.Python.3.13"}
+      ],
+      "configs": []
+    },
+    {
       "id": "qbittorrent",
       "name": "qBittorrent",
       "summary": "Fast, lightweight, open-source BitTorrent client without ads",
@@ -1216,6 +1839,27 @@
       "configs": []
     },
     {
+      "id": "ruby",
+      "name": "Ruby",
+      "summary": "Dynamic, open-source programming language focused on simplicity and productivity",
+      "category": "development",
+      "homepage": "https://www.ruby-lang.org",
+      "tags": ["ruby", "rails", "scripting", "language", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "ruby"},
+        {"os": "macos", "kind": "binary", "value": "ruby"},
+        {"os": "windows", "kind": "binary", "value": "ruby.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "ruby"},
+        {"os": "linux", "kind": "apt", "package": "ruby-full"},
+        {"os": "linux", "kind": "dnf", "package": "ruby"},
+        {"os": "macos", "kind": "brew", "package": "ruby"},
+        {"os": "windows", "kind": "winget", "package": "RubyInstallerTeam.Ruby.3.3"}
+      ],
+      "configs": []
+    },
+    {
       "id": "rustup",
       "name": "Rust (rustup)",
       "summary": "Official Rust toolchain installer managing rustc and cargo",
@@ -1255,6 +1899,27 @@
         {"os": "linux", "kind": "flatpak", "package": "org.signal.Signal", "remote": "flathub"},
         {"os": "macos", "kind": "brew_cask", "package": "signal"},
         {"os": "windows", "kind": "winget", "package": "OpenWhisperSystems.Signal"}
+      ],
+      "configs": []
+    },
+    {
+      "id": "sqlite",
+      "name": "SQLite",
+      "summary": "Lightweight, self-contained serverless SQL database engine and CLI",
+      "category": "development",
+      "homepage": "https://www.sqlite.org",
+      "tags": ["database", "sql", "embedded", "cli", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "sqlite3"},
+        {"os": "macos", "kind": "binary", "value": "sqlite3"},
+        {"os": "windows", "kind": "binary", "value": "sqlite3.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "sqlite"},
+        {"os": "linux", "kind": "apt", "package": "sqlite3"},
+        {"os": "linux", "kind": "dnf", "package": "sqlite"},
+        {"os": "macos", "kind": "brew", "package": "sqlite"},
+        {"os": "windows", "kind": "winget", "package": "SQLite.SQLite"}
       ],
       "configs": []
     },
@@ -1343,6 +2008,25 @@
         {"os": "linux", "kind": "flatpak", "package": "org.telegram.desktop", "remote": "flathub"},
         {"os": "macos", "kind": "brew_cask", "package": "telegram"},
         {"os": "windows", "kind": "winget", "package": "Telegram.TelegramDesktop"}
+      ],
+      "configs": []
+    },
+    {
+      "id": "terraform",
+      "name": "Terraform",
+      "summary": "Infrastructure as Code tool for provisioning and managing cloud resources",
+      "category": "development",
+      "homepage": "https://developer.hashicorp.com/terraform",
+      "tags": ["iac", "devops", "cloud", "infrastructure", "cli"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "terraform"},
+        {"os": "macos", "kind": "binary", "value": "terraform"},
+        {"os": "windows", "kind": "binary", "value": "terraform.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "terraform"},
+        {"os": "macos", "kind": "brew", "package": "terraform"},
+        {"os": "windows", "kind": "winget", "package": "Hashicorp.Terraform"}
       ],
       "configs": []
     },
@@ -1601,6 +2285,27 @@
       "configs": [
         {"id": "profile", "label": "Zen Browser profiles", "paths": {"linux": "~/.zen", "macos": "~/Library/Application Support/zen", "windows": "%APPDATA%\\zen"}}
       ]
+    },
+    {
+      "id": "zig",
+      "name": "Zig",
+      "summary": "General-purpose systems programming language and drop-in C/C++ cross-compiler",
+      "category": "development",
+      "homepage": "https://ziglang.org",
+      "repository": "https://github.com/ziglang/zig",
+      "tags": ["zig", "compiler", "systems", "c", "language", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "zig"},
+        {"os": "macos", "kind": "binary", "value": "zig"},
+        {"os": "windows", "kind": "binary", "value": "zig.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "zig"},
+        {"os": "linux", "kind": "dnf", "package": "zig"},
+        {"os": "macos", "kind": "brew", "package": "zig"},
+        {"os": "windows", "kind": "winget", "package": "zig.zig"}
+      ],
+      "configs": []
     },
     {
       "id": "zoxide",
