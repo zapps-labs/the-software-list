@@ -416,31 +416,6 @@
       ]
     },
     {
-      "id": "deno",
-      "name": "Deno",
-      "summary": "Secure modern runtime for JavaScript and TypeScript with built-in tooling",
-      "category": "development",
-      "homepage": "https://deno.com",
-      "repository": "https://github.com/denoland/deno",
-      "tags": ["javascript", "typescript", "runtime", "rust", "dev"],
-      "detect": [
-        {"os": "linux", "kind": "binary", "value": "deno"},
-        {"os": "linux", "kind": "path", "value": "~/.deno/bin/deno"},
-        {"os": "macos", "kind": "binary", "value": "deno"},
-        {"os": "macos", "kind": "path", "value": "~/.deno/bin/deno"},
-        {"os": "windows", "kind": "binary", "value": "deno.exe"}
-      ],
-      "methods": [
-        {"os": "linux", "kind": "pacman", "package": "deno"},
-        {"os": "linux", "kind": "sh", "install_cmd": "curl -fsSL https://deno.land/install.sh | sh"},
-        {"os": "macos", "kind": "brew", "package": "deno"},
-        {"os": "macos", "kind": "sh", "install_cmd": "curl -fsSL https://deno.land/install.sh | sh"},
-        {"os": "windows", "kind": "winget", "package": "DenoLand.Deno"},
-        {"os": "windows", "kind": "powershell", "install_cmd": "irm https://deno.land/install.ps1 | iex"}
-      ],
-      "configs": []
-    },
-    {
       "id": "discord",
       "name": "Discord",
       "summary": "Voice, video, and text chat for communities and teams",
