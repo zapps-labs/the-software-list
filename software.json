@@ -2217,6 +2217,29 @@
       ]
     },
     {
+      "id": "zapps",
+      "name": "zapps",
+      "summary": "Cross-platform software manager, config syncer, and encrypted notes backed by any cloud folder",
+      "category": "system",
+      "homepage": "https://z-apps.app",
+      "tags": ["software-manager", "dotfiles", "config-sync", "backup", "notes", "valk"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "zapps"},
+        {"os": "linux", "kind": "path", "value": "~/.local/bin/zapps"},
+        {"os": "macos", "kind": "binary", "value": "zapps"},
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/zapps.app"},
+        {"os": "macos", "kind": "path", "value": "~/Applications/zapps.app"},
+        {"os": "windows", "kind": "binary", "value": "zapps.exe"},
+        {"os": "windows", "kind": "path", "value": "%LOCALAPPDATA%\\zapps\\zapps.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "bash", "install_cmd": "curl -fsSL https://z-apps.app/install.sh | bash", "uninstall_cmd": "rm -rf ~/.local/share/zapps ~/.local/bin/zapps ~/.local/share/applications/zapps.desktop ~/.local/share/icons/hicolor/256x256/apps/zapps.png ~/.local/share/icons/hicolor/scalable/apps/zapps.svg"},
+        {"os": "macos", "kind": "bash", "install_cmd": "curl -fsSL https://z-apps.app/install.sh | bash", "uninstall_cmd": "rm -rf ~/.local/share/zapps ~/.local/bin/zapps /Applications/zapps.app ~/Applications/zapps.app"},
+        {"os": "windows", "kind": "powershell", "install_cmd": "irm https://z-apps.app/install.ps1 | iex", "uninstall_cmd": "$d=\"$env:LOCALAPPDATA\\zapps\"; Remove-Item -Force \"$env:APPDATA\\Microsoft\\Windows\\Start Menu\\Programs\\zapps.lnk\" -ErrorAction SilentlyContinue; $p=[Environment]::GetEnvironmentVariable(\"Path\",\"User\"); if($p){[Environment]::SetEnvironmentVariable(\"Path\",(($p -split \";\" | Where-Object { $_ -and $_ -ne $d }) -join \";\"),\"User\")}; Remove-Item -Recurse -Force $d -ErrorAction SilentlyContinue; if(Test-Path $d){ Start-Process -WindowStyle Hidden powershell -ArgumentList \"-NoProfile\",\"-Command\",\"while(Get-Process zapps -ErrorAction SilentlyContinue){Start-Sleep -Milliseconds 500}; Remove-Item -Recurse -Force '$d' -ErrorAction SilentlyContinue\" }"}
+      ],
+      "configs": []
+    },
+    {
       "id": "zed",
       "name": "Zed",
       "summary": "High-performance, GPU-accelerated code editor written in Rust",
