@@ -256,9 +256,9 @@
       ],
       "methods": [
         {"os": "linux", "kind": "aur", "package": "bun-bin"},
-        {"os": "linux", "kind": "bash", "install_cmd": "curl -fsSL https://bun.sh/install | bash"},
+        {"os": "linux", "kind": "bash", "install_cmd": "curl -fsSL https://bun.sh/install | bash", "uninstall_cmd": "rm -rf ~/.bun"},
         {"os": "macos", "kind": "brew", "package": "oven-sh/bun/bun"},
-        {"os": "macos", "kind": "bash", "install_cmd": "curl -fsSL https://bun.sh/install | bash"},
+        {"os": "macos", "kind": "bash", "install_cmd": "curl -fsSL https://bun.sh/install | bash", "uninstall_cmd": "rm -rf ~/.bun"},
         {"os": "windows", "kind": "winget", "package": "Oven-sh.Bun"},
         {"os": "windows", "kind": "powershell", "install_cmd": "irm bun.sh/install.ps1 | iex"}
       ],
@@ -340,9 +340,9 @@
       ],
       "methods": [
         {"os": "linux", "kind": "pacman", "package": "claude-code"},
-        {"os": "linux", "kind": "bash", "install_cmd": "curl -fsSL https://claude.ai/install.sh | bash"},
+        {"os": "linux", "kind": "bash", "install_cmd": "curl -fsSL https://claude.ai/install.sh | bash", "uninstall_cmd": "rm -f ~/.local/bin/claude"},
         {"os": "macos", "kind": "brew_cask", "package": "claude-code"},
-        {"os": "macos", "kind": "bash", "install_cmd": "curl -fsSL https://claude.ai/install.sh | bash"},
+        {"os": "macos", "kind": "bash", "install_cmd": "curl -fsSL https://claude.ai/install.sh | bash", "uninstall_cmd": "rm -f ~/.local/bin/claude"},
         {"os": "windows", "kind": "winget", "package": "Anthropic.ClaudeCode"},
         {"os": "windows", "kind": "powershell", "install_cmd": "irm https://claude.ai/install.ps1 | iex"}
       ],
@@ -955,9 +955,9 @@
       ],
       "methods": [
         {"os": "linux", "kind": "aur", "package": "grok-build"},
-        {"os": "linux", "kind": "bash", "install_cmd": "curl -fsSL https://x.ai/cli/install.sh | bash"},
+        {"os": "linux", "kind": "bash", "install_cmd": "curl -fsSL https://x.ai/cli/install.sh | bash", "uninstall_cmd": "rm -rf ~/.grok ~/.local/bin/grok"},
         {"os": "macos", "kind": "brew_cask", "package": "grok-build"},
-        {"os": "macos", "kind": "bash", "install_cmd": "curl -fsSL https://x.ai/cli/install.sh | bash"},
+        {"os": "macos", "kind": "bash", "install_cmd": "curl -fsSL https://x.ai/cli/install.sh | bash", "uninstall_cmd": "rm -rf ~/.grok ~/.local/bin/grok"},
         {"os": "windows", "kind": "winget", "package": "xAI.GrokBuild"},
         {"os": "windows", "kind": "powershell", "install_cmd": "irm https://x.ai/cli/install.ps1 | iex"}
       ],
@@ -1609,9 +1609,9 @@
       ],
       "methods": [
         {"os": "linux", "kind": "pacman", "package": "opencode"},
-        {"os": "linux", "kind": "bash", "install_cmd": "curl -fsSL https://opencode.ai/install | bash"},
+        {"os": "linux", "kind": "bash", "install_cmd": "curl -fsSL https://opencode.ai/install | bash", "uninstall_cmd": "rm -rf ~/.opencode"},
         {"os": "macos", "kind": "brew", "package": "opencode"},
-        {"os": "macos", "kind": "bash", "install_cmd": "curl -fsSL https://opencode.ai/install | bash"},
+        {"os": "macos", "kind": "bash", "install_cmd": "curl -fsSL https://opencode.ai/install | bash", "uninstall_cmd": "rm -rf ~/.opencode"},
         {"os": "windows", "kind": "powershell", "install_cmd": "npm install -g opencode-ai", "uninstall_cmd": "npm uninstall -g opencode-ai"}
       ],
       "configs": [
@@ -2143,8 +2143,8 @@
         {"os": "windows", "kind": "binary", "value": "vman.exe"}
       ],
       "methods": [
-        {"os": "linux", "kind": "bash", "install_cmd": "curl -sSL https://valk-lang.dev/vman.sh | bash"},
-        {"os": "macos", "kind": "bash", "install_cmd": "curl -sSL https://valk-lang.dev/vman.sh | bash"},
+        {"os": "linux", "kind": "bash", "install_cmd": "curl -sSL https://valk-lang.dev/vman.sh | bash", "uninstall_cmd": "rm -rf ~/.vman"},
+        {"os": "macos", "kind": "bash", "install_cmd": "curl -sSL https://valk-lang.dev/vman.sh | bash", "uninstall_cmd": "rm -rf ~/.vman"},
         {"os": "windows", "kind": "powershell", "install_cmd": "irm https://valk-lang.dev/vman.ps1 | iex"}
       ],
       "configs": []
