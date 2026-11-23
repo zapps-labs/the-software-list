@@ -9,6 +9,7 @@ This document defines the open JSON protocol used by `software.json` so any soft
   "schema_version": 1,
   "name": "the-software-list",
   "categories": {
+    "ai": "AI Tools",
     "browsers": "Browsers",
     "cli": "CLI Tools",
     "development": "Development"
@@ -19,7 +20,7 @@ This document defines the open JSON protocol used by `software.json` so any soft
 
 - `schema_version` (`integer`, required): Protocol version. Currently `1`. Consumers should ignore unknown fields to stay forward-compatible.
 - `name` (`string`, optional): Catalog identifier.
-- `categories` (`object`, required): Map of lowercase category keys (`^[a-z0-9][a-z0-9-]*$`) to human-readable display labels (e.g. `"cli": "CLI Tools"`).
+- `categories` (`object`, required): Map of lowercase category keys (`^[a-z0-9][a-z0-9-]*$`) to human-readable display labels (e.g. `"ai": "AI Tools"`, `"cli": "CLI Tools"`).
 - `software` (`array`, required): List of software entries sorted or indexed by unique `id`.
 
 ## Software Entry
@@ -29,7 +30,7 @@ This document defines the open JSON protocol used by `software.json` so any soft
 | `id` | `string` | Yes | Unique lowercase slug (`^[a-z0-9][a-z0-9-]*$`), e.g. `"neovim"`. |
 | `name` | `string` | Yes | Human-readable display name, e.g. `"Neovim"`. |
 | `summary` | `string` | Yes | Concise one-line description. |
-| `category` | `string` | Yes | Lowercase category key defined in top-level `categories` (e.g. `"browsers"`, `"cli"`, `"communication"`, `"development"`, `"graphics"`, `"media"`, `"productivity"`, `"system"`, `"terminals"`, `"utilities"`). |
+| `category` | `string` | Yes | Lowercase category key defined in top-level `categories` (e.g. `"ai"`, `"browsers"`, `"cli"`, `"communication"`, `"development"`, `"graphics"`, `"media"`, `"productivity"`, `"system"`, `"terminals"`, `"utilities"`). |
 | `homepage` | `string` | No | Official website URL (`https://...`). |
 | `repository` | `string` | No | Source code repository URL. |
 | `license` | `string` | No | SPDX license identifier (e.g. `"MIT"`, `"Apache-2.0"`, `"MPL-2.0"`). |

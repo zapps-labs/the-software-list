@@ -2,6 +2,7 @@
   "schema_version": 1,
   "name": "the-software-list",
   "categories": {
+    "ai": "AI Tools",
     "browsers": "Browsers",
     "cli": "CLI Tools",
     "communication": "Communication",
@@ -14,6 +15,29 @@
     "utilities": "Utilities"
   },
   "software": [
+    {
+      "id": "aider",
+      "name": "Aider",
+      "summary": "AI pair programming in your terminal with deep Git integration",
+      "category": "ai",
+      "homepage": "https://aider.chat",
+      "repository": "https://github.com/Aider-AI/aider",
+      "tags": ["ai", "coding", "agent", "llm", "cli"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "aider"},
+        {"os": "macos", "kind": "binary", "value": "aider"},
+        {"os": "windows", "kind": "binary", "value": "aider.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "sh", "install_cmd": "curl -LsSf https://aider.chat/install.sh | sh"},
+        {"os": "macos", "kind": "brew", "package": "aider"},
+        {"os": "macos", "kind": "sh", "install_cmd": "curl -LsSf https://aider.chat/install.sh | sh"},
+        {"os": "windows", "kind": "powershell", "install_cmd": "irm https://aider.chat/install.ps1 | iex"}
+      ],
+      "configs": [
+        {"id": "config", "label": "Aider config (~/.aider.conf.yml)", "paths": {"linux": "~/.aider.conf.yml", "macos": "~/.aider.conf.yml", "windows": "%USERPROFILE%\\.aider.conf.yml"}}
+      ]
+    },
     {
       "id": "alacritty",
       "name": "Alacritty",
@@ -59,6 +83,27 @@
       "configs": [
         {"id": "config", "label": "bat config", "paths": {"linux": "~/.config/bat", "macos": "~/.config/bat"}}
       ]
+    },
+    {
+      "id": "bitwarden",
+      "name": "Bitwarden",
+      "summary": "Open-source cross-platform password manager and secure vault",
+      "category": "productivity",
+      "homepage": "https://bitwarden.com",
+      "tags": ["passwords", "security", "vault", "sync"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "bitwarden-desktop"},
+        {"os": "linux", "kind": "flatpak", "value": "com.bitwarden.desktop"},
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/Bitwarden.app"},
+        {"os": "windows", "kind": "binary", "value": "Bitwarden.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "bitwarden"},
+        {"os": "linux", "kind": "flatpak", "package": "com.bitwarden.desktop", "remote": "flathub"},
+        {"os": "macos", "kind": "brew_cask", "package": "bitwarden"},
+        {"os": "windows", "kind": "winget", "package": "Bitwarden.Bitwarden"}
+      ],
+      "configs": []
     },
     {
       "id": "blender",
@@ -130,6 +175,54 @@
       ]
     },
     {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "summary": "Anthropic's agentic AI coding assistant that lives in your terminal",
+      "category": "ai",
+      "homepage": "https://claude.ai/code",
+      "tags": ["ai", "anthropic", "claude", "coding", "agent", "cli"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "claude"},
+        {"os": "linux", "kind": "path", "value": "~/.local/bin/claude"},
+        {"os": "macos", "kind": "binary", "value": "claude"},
+        {"os": "macos", "kind": "path", "value": "~/.local/bin/claude"},
+        {"os": "windows", "kind": "binary", "value": "claude.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "claude-code"},
+        {"os": "linux", "kind": "bash", "install_cmd": "curl -fsSL https://claude.ai/install.sh | bash"},
+        {"os": "macos", "kind": "brew_cask", "package": "claude-code"},
+        {"os": "macos", "kind": "bash", "install_cmd": "curl -fsSL https://claude.ai/install.sh | bash"},
+        {"os": "windows", "kind": "winget", "package": "Anthropic.ClaudeCode"},
+        {"os": "windows", "kind": "powershell", "install_cmd": "irm https://claude.ai/install.ps1 | iex"}
+      ],
+      "configs": [
+        {"id": "config", "label": "Claude Code settings (~/.claude)", "paths": {"linux": "~/.claude", "macos": "~/.claude", "windows": "%USERPROFILE%\\.claude"}}
+      ]
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "summary": "AI-first code editor built on VS Code with agentic editing and completions",
+      "category": "ai",
+      "homepage": "https://cursor.com",
+      "tags": ["ai", "editor", "ide", "coding", "agent"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "cursor"},
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/Cursor.app"},
+        {"os": "windows", "kind": "binary", "value": "Cursor.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "aur", "package": "cursor-bin"},
+        {"os": "macos", "kind": "brew_cask", "package": "cursor"},
+        {"os": "windows", "kind": "winget", "package": "Anysphere.Cursor"}
+      ],
+      "configs": [
+        {"id": "user-settings", "label": "Cursor editor settings", "paths": {"linux": "~/.config/Cursor/User", "macos": "~/Library/Application Support/Cursor/User", "windows": "%APPDATA%\\Cursor\\User"}},
+        {"id": "cursor-dir", "label": "Cursor AI & MCP config (~/.cursor)", "paths": {"linux": "~/.cursor", "macos": "~/.cursor", "windows": "%USERPROFILE%\\.cursor"}}
+      ]
+    },
+    {
       "id": "discord",
       "name": "Discord",
       "summary": "Voice, video, and text chat for communities and teams",
@@ -171,6 +264,96 @@
       "configs": []
     },
     {
+      "id": "eza",
+      "name": "eza",
+      "summary": "Modern, colorful replacement for ls with Git status and tree views",
+      "category": "cli",
+      "homepage": "https://eza.rocks",
+      "repository": "https://github.com/eza-community/eza",
+      "tags": ["ls", "files", "cli", "rust"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "eza"},
+        {"os": "macos", "kind": "binary", "value": "eza"},
+        {"os": "windows", "kind": "binary", "value": "eza.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "eza"},
+        {"os": "linux", "kind": "apt", "package": "eza"},
+        {"os": "linux", "kind": "dnf", "package": "eza"},
+        {"os": "macos", "kind": "brew", "package": "eza"},
+        {"os": "windows", "kind": "winget", "package": "eza-community.eza"}
+      ],
+      "configs": []
+    },
+    {
+      "id": "fastfetch",
+      "name": "Fastfetch",
+      "summary": "Fast, customizable system information tool written in C",
+      "category": "cli",
+      "homepage": "https://github.com/fastfetch-cli/fastfetch",
+      "repository": "https://github.com/fastfetch-cli/fastfetch",
+      "tags": ["system", "info", "neofetch", "cli"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "fastfetch"},
+        {"os": "macos", "kind": "binary", "value": "fastfetch"},
+        {"os": "windows", "kind": "binary", "value": "fastfetch.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "fastfetch"},
+        {"os": "linux", "kind": "apt", "package": "fastfetch"},
+        {"os": "linux", "kind": "dnf", "package": "fastfetch"},
+        {"os": "macos", "kind": "brew", "package": "fastfetch"},
+        {"os": "windows", "kind": "winget", "package": "Fastfetch-cli.Fastfetch"}
+      ],
+      "configs": [
+        {"id": "config", "label": "Fastfetch config", "paths": {"linux": "~/.config/fastfetch", "macos": "~/.config/fastfetch"}}
+      ]
+    },
+    {
+      "id": "fd",
+      "name": "fd",
+      "summary": "Simple, fast, and user-friendly alternative to find",
+      "category": "cli",
+      "homepage": "https://github.com/sharkdp/fd",
+      "repository": "https://github.com/sharkdp/fd",
+      "tags": ["find", "search", "files", "cli", "rust"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "fd"},
+        {"os": "linux", "kind": "binary", "value": "fdfind"},
+        {"os": "macos", "kind": "binary", "value": "fd"},
+        {"os": "windows", "kind": "binary", "value": "fd.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "fd"},
+        {"os": "linux", "kind": "apt", "package": "fd-find"},
+        {"os": "linux", "kind": "dnf", "package": "fd-find"},
+        {"os": "macos", "kind": "brew", "package": "fd"},
+        {"os": "windows", "kind": "winget", "package": "sharkdp.fd"}
+      ],
+      "configs": []
+    },
+    {
+      "id": "ffmpeg",
+      "name": "FFmpeg",
+      "summary": "Complete cross-platform toolset to record, convert, and stream audio and video",
+      "category": "media",
+      "homepage": "https://ffmpeg.org",
+      "tags": ["video", "audio", "transcode", "media", "cli"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "ffmpeg"},
+        {"os": "macos", "kind": "binary", "value": "ffmpeg"},
+        {"os": "windows", "kind": "binary", "value": "ffmpeg.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "ffmpeg"},
+        {"os": "linux", "kind": "apt", "package": "ffmpeg"},
+        {"os": "linux", "kind": "dnf", "package": "ffmpeg"},
+        {"os": "macos", "kind": "brew", "package": "ffmpeg"},
+        {"os": "windows", "kind": "winget", "package": "Gyan.FFmpeg"}
+      ],
+      "configs": []
+    },
+    {
       "id": "firefox",
       "name": "Firefox",
       "summary": "Fast, privacy-focused open-source web browser",
@@ -196,6 +379,54 @@
       ]
     },
     {
+      "id": "fish",
+      "name": "Fish",
+      "summary": "Smart, user-friendly interactive shell with autosuggestions out of the box",
+      "category": "terminals",
+      "homepage": "https://fishshell.com",
+      "repository": "https://github.com/fish-shell/fish-shell",
+      "tags": ["shell", "terminal", "cli"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "fish"},
+        {"os": "macos", "kind": "binary", "value": "fish"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "fish"},
+        {"os": "linux", "kind": "apt", "package": "fish"},
+        {"os": "linux", "kind": "dnf", "package": "fish"},
+        {"os": "macos", "kind": "brew", "package": "fish"}
+      ],
+      "configs": [
+        {"id": "config", "label": "Fish config", "paths": {"linux": "~/.config/fish", "macos": "~/.config/fish"}}
+      ]
+    },
+    {
+      "id": "flameshot",
+      "name": "Flameshot",
+      "summary": "Powerful open-source screenshot tool with built-in annotations",
+      "category": "utilities",
+      "homepage": "https://flameshot.org",
+      "repository": "https://github.com/flameshot-org/flameshot",
+      "tags": ["screenshot", "capture", "annotate", "utility"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "flameshot"},
+        {"os": "linux", "kind": "flatpak", "value": "org.flameshot.Flameshot"},
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/flameshot.app"},
+        {"os": "windows", "kind": "binary", "value": "flameshot.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "flameshot"},
+        {"os": "linux", "kind": "apt", "package": "flameshot"},
+        {"os": "linux", "kind": "dnf", "package": "flameshot"},
+        {"os": "linux", "kind": "flatpak", "package": "org.flameshot.Flameshot", "remote": "flathub"},
+        {"os": "macos", "kind": "brew_cask", "package": "flameshot"},
+        {"os": "windows", "kind": "winget", "package": "Flameshot.Flameshot"}
+      ],
+      "configs": [
+        {"id": "config", "label": "Flameshot config", "paths": {"linux": "~/.config/flameshot", "macos": "~/.config/flameshot", "windows": "%APPDATA%\\flameshot"}}
+      ]
+    },
+    {
       "id": "fzf",
       "name": "fzf",
       "summary": "Command-line fuzzy finder for files, history, and git",
@@ -215,6 +446,31 @@
         {"os": "windows", "kind": "winget", "package": "junegunn.fzf"}
       ],
       "configs": []
+    },
+    {
+      "id": "gemini-cli",
+      "name": "Gemini CLI",
+      "summary": "Open-source terminal AI agent from Google powered by Gemini",
+      "category": "ai",
+      "homepage": "https://geminicli.com",
+      "repository": "https://github.com/google-gemini/gemini-cli",
+      "tags": ["ai", "google", "gemini", "coding", "agent", "cli"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "gemini"},
+        {"os": "macos", "kind": "binary", "value": "gemini"},
+        {"os": "windows", "kind": "binary", "value": "gemini.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "gemini-cli"},
+        {"os": "linux", "kind": "sh", "install_cmd": "npm install -g @google/gemini-cli", "uninstall_cmd": "npm uninstall -g @google/gemini-cli"},
+        {"os": "macos", "kind": "brew", "package": "gemini-cli"},
+        {"os": "macos", "kind": "sh", "install_cmd": "npm install -g @google/gemini-cli", "uninstall_cmd": "npm uninstall -g @google/gemini-cli"},
+        {"os": "windows", "kind": "powershell", "install_cmd": "npm install -g @google/gemini-cli", "uninstall_cmd": "npm uninstall -g @google/gemini-cli"}
+      ],
+      "configs": [
+        {"id": "config", "label": "Gemini CLI config (~/.gemini)", "paths": {"linux": "~/.gemini", "macos": "~/.gemini", "windows": "%USERPROFILE%\\.gemini"}}
+      ],
+      "depends": ["nodejs"]
     },
     {
       "id": "ghostty",
@@ -284,6 +540,124 @@
       ]
     },
     {
+      "id": "gh",
+      "name": "GitHub CLI",
+      "summary": "Official command-line tool for GitHub pull requests, issues, and releases",
+      "category": "development",
+      "homepage": "https://cli.github.com",
+      "repository": "https://github.com/cli/cli",
+      "tags": ["github", "git", "cli", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "gh"},
+        {"os": "macos", "kind": "binary", "value": "gh"},
+        {"os": "windows", "kind": "binary", "value": "gh.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "github-cli"},
+        {"os": "linux", "kind": "apt", "package": "gh"},
+        {"os": "linux", "kind": "dnf", "package": "gh"},
+        {"os": "macos", "kind": "brew", "package": "gh"},
+        {"os": "windows", "kind": "winget", "package": "GitHub.cli"}
+      ],
+      "configs": [
+        {"id": "config", "label": "GitHub CLI config", "paths": {"linux": "~/.config/gh", "macos": "~/.config/gh", "windows": "%APPDATA%\\GitHub CLI"}}
+      ],
+      "depends": ["git"]
+    },
+    {
+      "id": "go",
+      "name": "Go",
+      "summary": "Fast, statically typed compiled programming language and toolchain",
+      "category": "development",
+      "homepage": "https://go.dev",
+      "tags": ["golang", "language", "compiler", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "go"},
+        {"os": "macos", "kind": "binary", "value": "go"},
+        {"os": "windows", "kind": "binary", "value": "go.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "go"},
+        {"os": "linux", "kind": "apt", "package": "golang"},
+        {"os": "linux", "kind": "dnf", "package": "golang"},
+        {"os": "macos", "kind": "brew", "package": "go"},
+        {"os": "windows", "kind": "winget", "package": "GoLang.Go"}
+      ],
+      "configs": []
+    },
+    {
+      "id": "goose",
+      "name": "Goose",
+      "summary": "Open-source, extensible on-machine AI agent with MCP support",
+      "category": "ai",
+      "homepage": "https://block.github.io/goose/",
+      "repository": "https://github.com/block/goose",
+      "tags": ["ai", "agent", "mcp", "coding", "cli"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "goose"},
+        {"os": "macos", "kind": "binary", "value": "goose"},
+        {"os": "windows", "kind": "binary", "value": "goose.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "bash", "install_cmd": "curl -fsSL https://github.com/aaif-goose/goose/releases/download/stable/download_cli.sh | bash"},
+        {"os": "macos", "kind": "brew", "package": "block-goose-cli"},
+        {"os": "macos", "kind": "bash", "install_cmd": "curl -fsSL https://github.com/aaif-goose/goose/releases/download/stable/download_cli.sh | bash"},
+        {"os": "windows", "kind": "winget", "package": "Block.Goose"}
+      ],
+      "configs": [
+        {"id": "config", "label": "Goose config", "paths": {"linux": "~/.config/goose", "macos": "~/.config/goose"}}
+      ]
+    },
+    {
+      "id": "helix",
+      "name": "Helix",
+      "summary": "Post-modern modal text editor with built-in tree-sitter and LSP support",
+      "category": "development",
+      "homepage": "https://helix-editor.com",
+      "repository": "https://github.com/helix-editor/helix",
+      "tags": ["editor", "modal", "terminal", "rust", "lsp"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "hx"},
+        {"os": "linux", "kind": "binary", "value": "helix"},
+        {"os": "macos", "kind": "binary", "value": "hx"},
+        {"os": "windows", "kind": "binary", "value": "hx.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "helix"},
+        {"os": "linux", "kind": "dnf", "package": "helix"},
+        {"os": "macos", "kind": "brew", "package": "helix"},
+        {"os": "windows", "kind": "winget", "package": "Helix.Helix"}
+      ],
+      "configs": [
+        {"id": "config", "label": "Helix config", "paths": {"linux": "~/.config/helix", "macos": "~/.config/helix", "windows": "%APPDATA%\\helix"}}
+      ]
+    },
+    {
+      "id": "inkscape",
+      "name": "Inkscape",
+      "summary": "Open-source vector graphics editor for SVG illustration and design",
+      "category": "graphics",
+      "homepage": "https://inkscape.org",
+      "tags": ["svg", "vector", "design", "graphics"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "inkscape"},
+        {"os": "linux", "kind": "flatpak", "value": "org.inkscape.Inkscape"},
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/Inkscape.app"},
+        {"os": "windows", "kind": "binary", "value": "inkscape.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "inkscape"},
+        {"os": "linux", "kind": "apt", "package": "inkscape"},
+        {"os": "linux", "kind": "dnf", "package": "inkscape"},
+        {"os": "linux", "kind": "flatpak", "package": "org.inkscape.Inkscape", "remote": "flathub"},
+        {"os": "macos", "kind": "brew_cask", "package": "inkscape"},
+        {"os": "windows", "kind": "winget", "package": "Inkscape.Inkscape"}
+      ],
+      "configs": [
+        {"id": "config", "label": "Inkscape preferences", "paths": {"linux": "~/.config/inkscape", "macos": "~/Library/Application Support/org.inkscape.Inkscape/config/inkscape"}}
+      ]
+    },
+    {
       "id": "jolt",
       "name": "jolt",
       "summary": "Fast HTTP/1.1 & HTTP/2 load tester with a live terminal UI",
@@ -303,6 +677,28 @@
       ],
       "configs": [],
       "depends": ["vman"]
+    },
+    {
+      "id": "jq",
+      "name": "jq",
+      "summary": "Lightweight and flexible command-line JSON processor",
+      "category": "cli",
+      "homepage": "https://jqlang.org",
+      "repository": "https://github.com/jqlang/jq",
+      "tags": ["json", "parser", "cli", "data"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "jq"},
+        {"os": "macos", "kind": "binary", "value": "jq"},
+        {"os": "windows", "kind": "binary", "value": "jq.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "jq"},
+        {"os": "linux", "kind": "apt", "package": "jq"},
+        {"os": "linux", "kind": "dnf", "package": "jq"},
+        {"os": "macos", "kind": "brew", "package": "jq"},
+        {"os": "windows", "kind": "winget", "package": "jqlang.jq"}
+      ],
+      "configs": []
     },
     {
       "id": "keepassxc",
@@ -351,6 +747,31 @@
       ]
     },
     {
+      "id": "krita",
+      "name": "Krita",
+      "summary": "Open-source digital painting and illustration studio",
+      "category": "graphics",
+      "homepage": "https://krita.org",
+      "tags": ["painting", "drawing", "illustration", "art", "graphics"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "krita"},
+        {"os": "linux", "kind": "flatpak", "value": "org.kde.krita"},
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/krita.app"},
+        {"os": "windows", "kind": "binary", "value": "krita.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "krita"},
+        {"os": "linux", "kind": "apt", "package": "krita"},
+        {"os": "linux", "kind": "dnf", "package": "krita"},
+        {"os": "linux", "kind": "flatpak", "package": "org.kde.krita", "remote": "flathub"},
+        {"os": "macos", "kind": "brew_cask", "package": "krita"},
+        {"os": "windows", "kind": "winget", "package": "KDE.Krita"}
+      ],
+      "configs": [
+        {"id": "config", "label": "Krita brushes & resources", "paths": {"linux": "~/.local/share/krita", "macos": "~/Library/Application Support/krita"}}
+      ]
+    },
+    {
       "id": "lazygit",
       "name": "Lazygit",
       "summary": "Simple terminal UI for Git commands",
@@ -372,6 +793,93 @@
         {"id": "config", "label": "Lazygit config", "paths": {"linux": "~/.config/lazygit", "macos": "~/Library/Application Support/lazygit", "windows": "%LOCALAPPDATA%\\lazygit"}}
       ],
       "depends": ["git"]
+    },
+    {
+      "id": "libreoffice",
+      "name": "LibreOffice",
+      "summary": "Free open-source office suite for documents, spreadsheets, and presentations",
+      "category": "productivity",
+      "homepage": "https://www.libreoffice.org",
+      "tags": ["office", "documents", "spreadsheets", "writer", "calc"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "libreoffice"},
+        {"os": "linux", "kind": "flatpak", "value": "org.libreoffice.LibreOffice"},
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/LibreOffice.app"},
+        {"os": "windows", "kind": "binary", "value": "soffice.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "libreoffice-fresh"},
+        {"os": "linux", "kind": "apt", "package": "libreoffice"},
+        {"os": "linux", "kind": "dnf", "package": "libreoffice"},
+        {"os": "linux", "kind": "flatpak", "package": "org.libreoffice.LibreOffice", "remote": "flathub"},
+        {"os": "macos", "kind": "brew_cask", "package": "libreoffice"},
+        {"os": "windows", "kind": "winget", "package": "TheDocumentFoundation.LibreOffice"}
+      ],
+      "configs": [
+        {"id": "config", "label": "LibreOffice user profile", "paths": {"linux": "~/.config/libreoffice", "macos": "~/Library/Application Support/LibreOffice", "windows": "%APPDATA%\\LibreOffice"}}
+      ]
+    },
+    {
+      "id": "llama-cpp",
+      "name": "llama.cpp",
+      "summary": "Fast C/C++ inference engine for running local LLMs on CPU and GPU",
+      "category": "ai",
+      "homepage": "https://github.com/ggml-org/llama.cpp",
+      "repository": "https://github.com/ggml-org/llama.cpp",
+      "tags": ["ai", "llm", "local", "inference", "gguf", "cli"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "llama-cli"},
+        {"os": "linux", "kind": "binary", "value": "llama-server"},
+        {"os": "macos", "kind": "binary", "value": "llama-cli"},
+        {"os": "windows", "kind": "binary", "value": "llama-cli.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "brew", "package": "llama.cpp"},
+        {"os": "macos", "kind": "brew", "package": "llama.cpp"},
+        {"os": "windows", "kind": "winget", "package": "ggml.llamacpp"}
+      ],
+      "configs": []
+    },
+    {
+      "id": "lm-studio",
+      "name": "LM Studio",
+      "summary": "Desktop app to discover, download, and run local LLMs offline",
+      "category": "ai",
+      "homepage": "https://lmstudio.ai",
+      "tags": ["ai", "llm", "local", "gui", "gguf"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "lms"},
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/LM Studio.app"},
+        {"os": "windows", "kind": "binary", "value": "LM Studio.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "aur", "package": "lm-studio-bin"},
+        {"os": "macos", "kind": "brew_cask", "package": "lm-studio"},
+        {"os": "windows", "kind": "winget", "package": "ElementLabs.LMStudio"}
+      ],
+      "configs": []
+    },
+    {
+      "id": "localsend",
+      "name": "LocalSend",
+      "summary": "Open-source cross-platform AirDrop alternative for sharing files over LAN",
+      "category": "utilities",
+      "homepage": "https://localsend.org",
+      "repository": "https://github.com/localsend/localsend",
+      "tags": ["share", "transfer", "airdrop", "lan", "files"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "localsend"},
+        {"os": "linux", "kind": "flatpak", "value": "org.localsend.localsend_app"},
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/LocalSend.app"},
+        {"os": "windows", "kind": "binary", "value": "localsend_app.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "localsend"},
+        {"os": "linux", "kind": "flatpak", "package": "org.localsend.localsend_app", "remote": "flathub"},
+        {"os": "macos", "kind": "brew_cask", "package": "localsend"},
+        {"os": "windows", "kind": "winget", "package": "LocalSend.LocalSend"}
+      ],
+      "configs": []
     },
     {
       "id": "mpv",
@@ -422,6 +930,27 @@
       ]
     },
     {
+      "id": "nodejs",
+      "name": "Node.js",
+      "summary": "Cross-platform JavaScript runtime built on V8 with npm",
+      "category": "development",
+      "homepage": "https://nodejs.org",
+      "tags": ["javascript", "typescript", "npm", "runtime", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "node"},
+        {"os": "macos", "kind": "binary", "value": "node"},
+        {"os": "windows", "kind": "binary", "value": "node.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "nodejs"},
+        {"os": "linux", "kind": "apt", "package": "nodejs"},
+        {"os": "linux", "kind": "dnf", "package": "nodejs"},
+        {"os": "macos", "kind": "brew", "package": "node"},
+        {"os": "windows", "kind": "winget", "package": "OpenJS.NodeJS.LTS"}
+      ],
+      "configs": []
+    },
+    {
       "id": "obs-studio",
       "name": "OBS Studio",
       "summary": "Open-source video recording and live streaming studio",
@@ -470,6 +999,127 @@
       ]
     },
     {
+      "id": "ollama",
+      "name": "Ollama",
+      "summary": "Run open-weight large language models locally with a simple CLI and API",
+      "category": "ai",
+      "homepage": "https://ollama.com",
+      "repository": "https://github.com/ollama/ollama",
+      "tags": ["ai", "llm", "local", "models", "cli"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "ollama"},
+        {"os": "macos", "kind": "binary", "value": "ollama"},
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/Ollama.app"},
+        {"os": "windows", "kind": "binary", "value": "ollama.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "ollama"},
+        {"os": "linux", "kind": "sh", "install_cmd": "curl -fsSL https://ollama.com/install.sh | sh"},
+        {"os": "macos", "kind": "brew", "package": "ollama"},
+        {"os": "macos", "kind": "brew_cask", "package": "ollama-app"},
+        {"os": "windows", "kind": "winget", "package": "Ollama.Ollama"}
+      ],
+      "configs": []
+    },
+    {
+      "id": "codex",
+      "name": "OpenAI Codex CLI",
+      "summary": "OpenAI's lightweight coding agent that runs directly in your terminal",
+      "category": "ai",
+      "homepage": "https://github.com/openai/codex",
+      "repository": "https://github.com/openai/codex",
+      "tags": ["ai", "openai", "codex", "coding", "agent", "cli"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "codex"},
+        {"os": "macos", "kind": "binary", "value": "codex"},
+        {"os": "windows", "kind": "binary", "value": "codex.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "sh", "install_cmd": "curl -fsSL https://chatgpt.com/codex/install.sh | sh"},
+        {"os": "macos", "kind": "brew_cask", "package": "codex"},
+        {"os": "macos", "kind": "sh", "install_cmd": "curl -fsSL https://chatgpt.com/codex/install.sh | sh"},
+        {"os": "windows", "kind": "powershell", "install_cmd": "irm https://chatgpt.com/codex/install.ps1 | iex"}
+      ],
+      "configs": [
+        {"id": "config", "label": "Codex config (~/.codex)", "paths": {"linux": "~/.codex", "macos": "~/.codex", "windows": "%USERPROFILE%\\.codex"}}
+      ]
+    },
+    {
+      "id": "opencode",
+      "name": "OpenCode",
+      "summary": "Open-source terminal AI coding agent with multi-provider model support",
+      "category": "ai",
+      "homepage": "https://opencode.ai",
+      "repository": "https://github.com/anomalyco/opencode",
+      "tags": ["ai", "coding", "agent", "tui", "cli"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "opencode"},
+        {"os": "linux", "kind": "path", "value": "~/.opencode/bin/opencode"},
+        {"os": "macos", "kind": "binary", "value": "opencode"},
+        {"os": "macos", "kind": "path", "value": "~/.opencode/bin/opencode"},
+        {"os": "windows", "kind": "binary", "value": "opencode.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "opencode"},
+        {"os": "linux", "kind": "bash", "install_cmd": "curl -fsSL https://opencode.ai/install | bash"},
+        {"os": "macos", "kind": "brew", "package": "opencode"},
+        {"os": "macos", "kind": "bash", "install_cmd": "curl -fsSL https://opencode.ai/install | bash"},
+        {"os": "windows", "kind": "powershell", "install_cmd": "npm install -g opencode-ai", "uninstall_cmd": "npm uninstall -g opencode-ai"}
+      ],
+      "configs": [
+        {"id": "config", "label": "OpenCode config", "paths": {"linux": "~/.config/opencode", "macos": "~/.config/opencode"}}
+      ]
+    },
+    {
+      "id": "qbittorrent",
+      "name": "qBittorrent",
+      "summary": "Fast, lightweight, open-source BitTorrent client without ads",
+      "category": "utilities",
+      "homepage": "https://www.qbittorrent.org",
+      "tags": ["torrent", "bittorrent", "download", "p2p"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "qbittorrent"},
+        {"os": "linux", "kind": "flatpak", "value": "org.qbittorrent.qBittorrent"},
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/qbittorrent.app"},
+        {"os": "windows", "kind": "binary", "value": "qbittorrent.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "qbittorrent"},
+        {"os": "linux", "kind": "apt", "package": "qbittorrent"},
+        {"os": "linux", "kind": "dnf", "package": "qbittorrent"},
+        {"os": "linux", "kind": "flatpak", "package": "org.qbittorrent.qBittorrent", "remote": "flathub"},
+        {"os": "macos", "kind": "brew_cask", "package": "qbittorrent"},
+        {"os": "windows", "kind": "winget", "package": "qBittorrent.qBittorrent"}
+      ],
+      "configs": [
+        {"id": "config", "label": "qBittorrent config", "paths": {"linux": "~/.config/qBittorrent", "macos": "~/.config/qBittorrent", "windows": "%APPDATA%\\qBittorrent"}}
+      ]
+    },
+    {
+      "id": "rclone",
+      "name": "rclone",
+      "summary": "Command-line program to manage, mount, and sync files on cloud storage",
+      "category": "utilities",
+      "homepage": "https://rclone.org",
+      "repository": "https://github.com/rclone/rclone",
+      "tags": ["cloud", "sync", "backup", "s3", "cli"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "rclone"},
+        {"os": "macos", "kind": "binary", "value": "rclone"},
+        {"os": "windows", "kind": "binary", "value": "rclone.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "rclone"},
+        {"os": "linux", "kind": "apt", "package": "rclone"},
+        {"os": "linux", "kind": "dnf", "package": "rclone"},
+        {"os": "macos", "kind": "brew", "package": "rclone"},
+        {"os": "windows", "kind": "winget", "package": "Rclone.Rclone"}
+      ],
+      "configs": [
+        {"id": "config", "label": "rclone remotes & config", "paths": {"linux": "~/.config/rclone", "macos": "~/.config/rclone", "windows": "%APPDATA%\\rclone"}}
+      ]
+    },
+    {
       "id": "ripgrep",
       "name": "ripgrep",
       "summary": "Ultra-fast recursive line search tool that respects .gitignore",
@@ -487,6 +1137,49 @@
         {"os": "linux", "kind": "dnf", "package": "ripgrep"},
         {"os": "macos", "kind": "brew", "package": "ripgrep"},
         {"os": "windows", "kind": "winget", "package": "BurntSushi.ripgrep.MSVC"}
+      ],
+      "configs": []
+    },
+    {
+      "id": "rustup",
+      "name": "Rust (rustup)",
+      "summary": "Official Rust toolchain installer managing rustc and cargo",
+      "category": "development",
+      "homepage": "https://rustup.rs",
+      "tags": ["rust", "cargo", "compiler", "toolchain", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "rustup"},
+        {"os": "linux", "kind": "path", "value": "~/.cargo/bin/rustup"},
+        {"os": "macos", "kind": "binary", "value": "rustup"},
+        {"os": "macos", "kind": "path", "value": "~/.cargo/bin/rustup"},
+        {"os": "windows", "kind": "binary", "value": "rustup.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "rustup"},
+        {"os": "linux", "kind": "sh", "install_cmd": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y"},
+        {"os": "macos", "kind": "sh", "install_cmd": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y"},
+        {"os": "windows", "kind": "winget", "package": "Rustlang.Rustup"}
+      ],
+      "configs": []
+    },
+    {
+      "id": "signal",
+      "name": "Signal",
+      "summary": "End-to-end encrypted private messaging and calling app",
+      "category": "communication",
+      "homepage": "https://signal.org",
+      "tags": ["chat", "messaging", "privacy", "encrypted"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "signal-desktop"},
+        {"os": "linux", "kind": "flatpak", "value": "org.signal.Signal"},
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/Signal.app"},
+        {"os": "windows", "kind": "binary", "value": "Signal.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "signal-desktop"},
+        {"os": "linux", "kind": "flatpak", "package": "org.signal.Signal", "remote": "flathub"},
+        {"os": "macos", "kind": "brew_cask", "package": "signal"},
+        {"os": "windows", "kind": "winget", "package": "OpenWhisperSystems.Signal"}
       ],
       "configs": []
     },
@@ -515,6 +1208,95 @@
       ]
     },
     {
+      "id": "syncthing",
+      "name": "Syncthing",
+      "summary": "Continuous, decentralized peer-to-peer file synchronization",
+      "category": "system",
+      "homepage": "https://syncthing.net",
+      "repository": "https://github.com/syncthing/syncthing",
+      "tags": ["sync", "files", "p2p", "cloud", "backup"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "syncthing"},
+        {"os": "macos", "kind": "binary", "value": "syncthing"},
+        {"os": "windows", "kind": "binary", "value": "syncthing.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "syncthing"},
+        {"os": "linux", "kind": "apt", "package": "syncthing"},
+        {"os": "linux", "kind": "dnf", "package": "syncthing"},
+        {"os": "macos", "kind": "brew", "package": "syncthing"},
+        {"os": "windows", "kind": "winget", "package": "Syncthing.Syncthing"}
+      ],
+      "configs": []
+    },
+    {
+      "id": "tailscale",
+      "name": "Tailscale",
+      "summary": "Zero-config WireGuard mesh VPN for securely connecting your devices",
+      "category": "system",
+      "homepage": "https://tailscale.com",
+      "tags": ["vpn", "wireguard", "network", "mesh", "remote"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "tailscale"},
+        {"os": "macos", "kind": "binary", "value": "tailscale"},
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/Tailscale.app"},
+        {"os": "windows", "kind": "binary", "value": "tailscale.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "tailscale"},
+        {"os": "linux", "kind": "sh", "install_cmd": "curl -fsSL https://tailscale.com/install.sh | sh"},
+        {"os": "macos", "kind": "brew_cask", "package": "tailscale-app"},
+        {"os": "windows", "kind": "winget", "package": "Tailscale.Tailscale"}
+      ],
+      "configs": []
+    },
+    {
+      "id": "telegram",
+      "name": "Telegram",
+      "summary": "Fast, cloud-synced cross-platform messaging desktop client",
+      "category": "communication",
+      "homepage": "https://desktop.telegram.org",
+      "tags": ["chat", "messaging", "cloud"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "telegram-desktop"},
+        {"os": "linux", "kind": "flatpak", "value": "org.telegram.desktop"},
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/Telegram.app"},
+        {"os": "windows", "kind": "binary", "value": "Telegram.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "telegram-desktop"},
+        {"os": "linux", "kind": "flatpak", "package": "org.telegram.desktop", "remote": "flathub"},
+        {"os": "macos", "kind": "brew_cask", "package": "telegram"},
+        {"os": "windows", "kind": "winget", "package": "Telegram.TelegramDesktop"}
+      ],
+      "configs": []
+    },
+    {
+      "id": "thunderbird",
+      "name": "Thunderbird",
+      "summary": "Open-source email, calendar, and RSS feed desktop client",
+      "category": "communication",
+      "homepage": "https://www.thunderbird.net",
+      "tags": ["email", "mail", "calendar", "mozilla"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "thunderbird"},
+        {"os": "linux", "kind": "flatpak", "value": "org.mozilla.Thunderbird"},
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/Thunderbird.app"},
+        {"os": "windows", "kind": "binary", "value": "thunderbird.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "thunderbird"},
+        {"os": "linux", "kind": "apt", "package": "thunderbird"},
+        {"os": "linux", "kind": "dnf", "package": "thunderbird"},
+        {"os": "linux", "kind": "flatpak", "package": "org.mozilla.Thunderbird", "remote": "flathub"},
+        {"os": "macos", "kind": "brew_cask", "package": "thunderbird"},
+        {"os": "windows", "kind": "winget", "package": "Mozilla.Thunderbird"}
+      ],
+      "configs": [
+        {"id": "profile", "label": "Thunderbird profiles", "paths": {"linux": "~/.thunderbird", "macos": "~/Library/Thunderbird", "windows": "%APPDATA%\\Thunderbird"}}
+      ]
+    },
+    {
       "id": "tmux",
       "name": "tmux",
       "summary": "Terminal multiplexer for persistent sessions, panes, and windows",
@@ -533,6 +1315,31 @@
       ],
       "configs": [
         {"id": "tmux-conf", "label": "tmux config (~/.tmux.conf)", "paths": {"linux": "~/.tmux.conf", "macos": "~/.tmux.conf"}}
+      ]
+    },
+    {
+      "id": "uv",
+      "name": "uv",
+      "summary": "Extremely fast Python package and project manager written in Rust",
+      "category": "development",
+      "homepage": "https://docs.astral.sh/uv/",
+      "repository": "https://github.com/astral-sh/uv",
+      "tags": ["python", "package-manager", "rust", "cli", "dev"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "uv"},
+        {"os": "macos", "kind": "binary", "value": "uv"},
+        {"os": "windows", "kind": "binary", "value": "uv.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "uv"},
+        {"os": "linux", "kind": "sh", "install_cmd": "curl -LsSf https://astral.sh/uv/install.sh | sh"},
+        {"os": "macos", "kind": "brew", "package": "uv"},
+        {"os": "macos", "kind": "sh", "install_cmd": "curl -LsSf https://astral.sh/uv/install.sh | sh"},
+        {"os": "windows", "kind": "winget", "package": "astral-sh.uv"},
+        {"os": "windows", "kind": "powershell", "install_cmd": "irm https://astral.sh/uv/install.ps1 | iex"}
+      ],
+      "configs": [
+        {"id": "config", "label": "uv config", "paths": {"linux": "~/.config/uv", "macos": "~/.config/uv", "windows": "%APPDATA%\\uv"}}
       ]
     },
     {
@@ -607,6 +1414,73 @@
       "configs": []
     },
     {
+      "id": "wezterm",
+      "name": "WezTerm",
+      "summary": "GPU-accelerated cross-platform terminal emulator and multiplexer configured in Lua",
+      "category": "terminals",
+      "homepage": "https://wezterm.org",
+      "repository": "https://github.com/wezterm/wezterm",
+      "tags": ["terminal", "gpu", "lua", "multiplexer", "rust"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "wezterm"},
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/WezTerm.app"},
+        {"os": "windows", "kind": "binary", "value": "wezterm-gui.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "wezterm"},
+        {"os": "macos", "kind": "brew_cask", "package": "wezterm"},
+        {"os": "windows", "kind": "winget", "package": "wez.wezterm"}
+      ],
+      "configs": [
+        {"id": "config", "label": "WezTerm config", "paths": {"linux": "~/.config/wezterm", "macos": "~/.config/wezterm", "windows": "%USERPROFILE%\\.config\\wezterm"}}
+      ]
+    },
+    {
+      "id": "windsurf",
+      "name": "Windsurf",
+      "summary": "Agentic AI code editor with multi-file Cascade editing workflows",
+      "category": "ai",
+      "homepage": "https://windsurf.com",
+      "tags": ["ai", "editor", "ide", "coding", "agent"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "windsurf"},
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/Windsurf.app"},
+        {"os": "windows", "kind": "binary", "value": "Windsurf.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "aur", "package": "windsurf-bin"},
+        {"os": "macos", "kind": "brew_cask", "package": "windsurf"},
+        {"os": "windows", "kind": "winget", "package": "Codeium.Windsurf"}
+      ],
+      "configs": [
+        {"id": "user-settings", "label": "Windsurf editor settings", "paths": {"linux": "~/.config/Windsurf/User", "macos": "~/Library/Application Support/Windsurf/User", "windows": "%APPDATA%\\Windsurf\\User"}}
+      ]
+    },
+    {
+      "id": "yt-dlp",
+      "name": "yt-dlp",
+      "summary": "Feature-rich command-line audio and video downloader",
+      "category": "cli",
+      "homepage": "https://github.com/yt-dlp/yt-dlp",
+      "repository": "https://github.com/yt-dlp/yt-dlp",
+      "tags": ["video", "audio", "download", "youtube", "cli"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "yt-dlp"},
+        {"os": "macos", "kind": "binary", "value": "yt-dlp"},
+        {"os": "windows", "kind": "binary", "value": "yt-dlp.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "yt-dlp"},
+        {"os": "linux", "kind": "apt", "package": "yt-dlp"},
+        {"os": "linux", "kind": "dnf", "package": "yt-dlp"},
+        {"os": "macos", "kind": "brew", "package": "yt-dlp"},
+        {"os": "windows", "kind": "winget", "package": "yt-dlp.yt-dlp"}
+      ],
+      "configs": [
+        {"id": "config", "label": "yt-dlp config", "paths": {"linux": "~/.config/yt-dlp", "macos": "~/.config/yt-dlp", "windows": "%APPDATA%\\yt-dlp"}}
+      ]
+    },
+    {
       "id": "zed",
       "name": "Zed",
       "summary": "High-performance, GPU-accelerated code editor written in Rust",
@@ -628,6 +1502,52 @@
       "configs": [
         {"id": "config", "label": "Zed settings & keymap", "paths": {"linux": "~/.config/zed", "macos": "~/.config/zed"}}
       ]
+    },
+    {
+      "id": "zen-browser",
+      "name": "Zen Browser",
+      "summary": "Privacy-focused Firefox-based browser with vertical tabs and workspaces",
+      "category": "browsers",
+      "homepage": "https://zen-browser.app",
+      "repository": "https://github.com/zen-browser/desktop",
+      "tags": ["browser", "web", "firefox", "privacy"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "zen-browser"},
+        {"os": "linux", "kind": "flatpak", "value": "io.github.zen_browser.zen"},
+        {"os": "macos", "kind": "macos_app", "value": "/Applications/Zen.app"},
+        {"os": "windows", "kind": "binary", "value": "zen.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "aur", "package": "zen-browser-bin"},
+        {"os": "linux", "kind": "flatpak", "package": "io.github.zen_browser.zen", "remote": "flathub"},
+        {"os": "macos", "kind": "brew_cask", "package": "zen"},
+        {"os": "windows", "kind": "winget", "package": "Zen-Team.Zen-Browser"}
+      ],
+      "configs": [
+        {"id": "profile", "label": "Zen Browser profiles", "paths": {"linux": "~/.zen", "macos": "~/Library/Application Support/zen", "windows": "%APPDATA%\\zen"}}
+      ]
+    },
+    {
+      "id": "zoxide",
+      "name": "zoxide",
+      "summary": "Smarter cd command that learns your most-used directories",
+      "category": "cli",
+      "homepage": "https://github.com/ajeetdsouza/zoxide",
+      "repository": "https://github.com/ajeetdsouza/zoxide",
+      "tags": ["cd", "navigation", "shell", "rust", "cli"],
+      "detect": [
+        {"os": "linux", "kind": "binary", "value": "zoxide"},
+        {"os": "macos", "kind": "binary", "value": "zoxide"},
+        {"os": "windows", "kind": "binary", "value": "zoxide.exe"}
+      ],
+      "methods": [
+        {"os": "linux", "kind": "pacman", "package": "zoxide"},
+        {"os": "linux", "kind": "apt", "package": "zoxide"},
+        {"os": "linux", "kind": "dnf", "package": "zoxide"},
+        {"os": "macos", "kind": "brew", "package": "zoxide"},
+        {"os": "windows", "kind": "winget", "package": "ajeetdsouza.zoxide"}
+      ],
+      "configs": []
     },
     {
       "id": "zsh",
